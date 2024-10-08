@@ -29,8 +29,18 @@ const imgAPI = {
     'https://via.placeholder.com/640x425/c4cdff/757575',
   ],
   saas: [
-    'https://marketplace.canva.com/EAFVfIiNkUI/1/0/1600w/canva-OeRy4zD0GF4.jpg',
-    '/images/saas/app-screen1_nddmrv1.png',
+    '/images/saas/featur_ar.png',
+    '/images/saas/dahsboared_ar.png',
+    'https://via.placeholder.com/1000x625/e6f8ff/757575',
+    '/images/saas/app-counter.png',
+    'https://via.placeholder.com/1000x680/b44fd4/FFFFFF',
+    'https://via.placeholder.com/1000x680/00a7e8/FFFFFF',
+    'https://via.placeholder.com/1000x680/e91e63/FFFFFF',
+    '/images/saas/desktop_illustration.png'
+  ],
+  saas_en: [
+    '/images/saas/featur_en.png',
+    '/images/saas/dahsboared_en.png',
     'https://via.placeholder.com/1000x625/e6f8ff/757575',
     '/images/saas/app-counter.png',
     'https://via.placeholder.com/1000x680/b44fd4/FFFFFF',

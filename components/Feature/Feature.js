@@ -27,7 +27,7 @@ function Feature() {
   const theme = useTheme();
 
   const [value, setValue] = useState(0);
-  const { t } = useTranslation('common');
+  const { t, i18n: { language: locale } } = useTranslation('common');
   const isDesktop = useMediaQuery(theme.breakpoints.up('lg'));
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
@@ -55,7 +55,7 @@ function Feature() {
                     tagOuter="section"
                   >
                     <figure className={clsx(classes.figure, classes.screen)}>
-                      <img src={imgAPI.saas[0]} alt="screen" />
+                      <img src={locale === 'ar' ? imgAPI.saas[0] : imgAPI.saas_en[0]} alt="screen" />
                     </figure>
                   </Parallax>
                   <Hidden smDown>
@@ -64,7 +64,7 @@ function Feature() {
                       tagOuter="section"
                     >
                       <figure className={clsx(classes.figure, classes.graphic)}>
-                        <img src={imgAPI.saas[1]} alt="illustration" />
+                        <img src={locale === 'ar' ? imgAPI.saas[1] : imgAPI.saas_en[1]} alt="illustration" />
                       </figure>
                     </Parallax>
                   </Hidden>
@@ -93,27 +93,27 @@ function Feature() {
                     <div className={classes.list}>
                       <CheckIcon color="primary" style={{ fontSize: 30 }} />
                       &nbsp;
-                      <span style={{ fontSize: '20px' }}>{t('store_design')}</span>
+                      <span style={{ fontSize: '20px' }}>{t('saas-landing.store_design')}</span>
                     </div>
                     <div className={classes.list}>
                       <CheckIcon color="primary" style={{ fontSize: 30 }} />
                       &nbsp;
                       <span style={{ fontSize: '20px' }}>
-                        {t('portfolio_website_design')}
+                        {t('saas-landing.portfolio_website_design')}
                       </span>
                     </div>
                     <div className={classes.list}>
                       <CheckIcon color="primary" style={{ fontSize: 30 }} />
                       &nbsp;
                       <span style={{ fontSize: '20px' }}>
-                        {t('landing_page_design')}
+                        {t('saas-landing.landing_page_design')}
                       </span>
                     </div>
                     <div className={classes.list}>
                       <CheckIcon color="primary" style={{ fontSize: 30 }} />
                       &nbsp;
                       <span style={{ fontSize: '20px' }}>
-                        {t('website_maintenance')}
+                        {t('saas-landing.website_maintenance')}
                       </span>
                     </div>
                     <Button variant="contained" color="primary" size="large" className={classes.btn}>
@@ -160,7 +160,7 @@ function Feature() {
                     tagOuter="section"
                   >
                     <figure className={clsx(classes.figure, classes.screen)}>
-                      <img src={imgAPI.saas[2]} alt="screen" />
+                      <img src={locale === 'ar' ? imgAPI.saas[2] : imgAPI.saas_en[2]} alt="screen" />
                     </figure>
                   </Parallax>
                   <Hidden smDown>
@@ -169,7 +169,7 @@ function Feature() {
                       tagOuter="section"
                     >
                       <figure className={classes.graphic}>
-                        <img src={imgAPI.saas[3]} alt="illustration" />
+                        <img src={locale === 'ar' ? imgAPI.saas[3] : imgAPI.saas_en[3]} alt="illustration" />
                       </figure>
                     </Parallax>
                   </Hidden>

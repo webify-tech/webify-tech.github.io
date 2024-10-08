@@ -15,7 +15,7 @@ function Numbers() {
     <Container>
       <div className={classes.root}>
         <Typography variant="h3" className={clsx(text.title, classes.title)}>
-          {t('Numbers_Talks')}
+          {t('saas-landing.numbers_talks')}
         </Typography>
       </div>
     </Container>
