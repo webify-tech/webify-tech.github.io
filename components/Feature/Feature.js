@@ -181,10 +181,6 @@ function Feature() {
           <div className={clsx(classes.item, classes.last)}>
             <Title align="center">
               {t('saas-landing.feature_title3')}
-              &nbsp;
-              <strong>
-                {t('saas-landing.feature_titlestrong3')}
-              </strong>
             </Title>
             <div className={classes.tab}>
               <Grid container spacing={6}>
