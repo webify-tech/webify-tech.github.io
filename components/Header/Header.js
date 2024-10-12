@@ -109,7 +109,7 @@ function Header(props) {
                     </a>
                   </Link>
                 ) : (
-                  <AnchorLink href="#feature">
+                  <AnchorLink href="#home">
                     <img src={logo} alt="logo" />
                     {!isMobile && brand.saas.name}
                   </AnchorLink>

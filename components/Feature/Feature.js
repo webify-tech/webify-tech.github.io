@@ -193,19 +193,19 @@ function Feature() {
                     textColor="primary"
                     centered
                   >
-                    <Tab classes={{ root: classes.tabLabel, selected: classes.selected }} label="Pellentesque" />
-                    <Tab classes={{ root: classes.tabLabel, selected: classes.selected }} label="Donec" />
-                    <Tab classes={{ root: classes.tabLabel, selected: classes.selected }} label="Vestibulum" />
+                    <Tab classes={{ root: classes.tabLabel, selected: classes.selected }} label={t('saas-landing.store')} />
+                    <Tab classes={{ root: classes.tabLabel, selected: classes.selected }} label={t('saas-landing.portfolio')} />
+                    <Tab classes={{ root: classes.tabLabel, selected: classes.selected }} label={t('saas-landing.landing_page')} />
                   </Tabs>
                   <div className={classes.tabContent}>
                     {value === 0 && (
                       <section>
                         <Typography component="h6" display="block" align="center" className={text.subtitle2}>
-                          {t('saas-landing.feature_desc3')}
+                          {t('saas-landing.feature_desc1')}
                         </Typography>
                         <div className={classes.illustrationCenter}>
                           <figure className={clsx(classes.figure, classes.screen)}>
-                            <img src={imgAPI.saas[4]} alt="screen" />
+                            <img src={locale === 'ar' ? imgAPI.saas[4] : imgAPI.saas_en[4]} alt="screen" />
                           </figure>
                         </div>
                       </section>
@@ -213,11 +213,11 @@ function Feature() {
                     {value === 1 && (
                       <section>
                         <Typography component="h6" display="block" align="center" className={text.subtitle2}>
-                          {t('saas-landing.feature_desc3')}
+                          {t('saas-landing.feature_desc2')}
                         </Typography>
                         <div className={classes.illustrationCenter}>
                           <figure className={clsx(classes.figure, classes.screen)}>
-                            <img src={imgAPI.saas[5]} alt="screen" />
+                            <img src={locale === 'ar' ? imgAPI.saas[5] : imgAPI.saas_en[5]} alt="screen" />
                           </figure>
                         </div>
                       </section>
@@ -229,7 +229,7 @@ function Feature() {
                         </Typography>
                         <div className={classes.illustrationCenter}>
                           <figure className={clsx(classes.figure, classes.screen)}>
-                            <img src={imgAPI.saas[6]} alt="screen" />
+                            <img src={locale === 'ar' ? imgAPI.saas[6] : imgAPI.saas_en[6]} alt="screen" />
                           </figure>
                         </div>
                       </section>

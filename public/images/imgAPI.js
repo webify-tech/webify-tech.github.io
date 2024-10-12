@@ -33,9 +33,9 @@ const imgAPI = {
     '/images/saas/dahsboared_ar.png',
     'https://via.placeholder.com/1000x625/e6f8ff/757575',
     '/images/saas/app-counter.png',
-    'https://via.placeholder.com/1000x680/b44fd4/FFFFFF',
-    'https://via.placeholder.com/1000x680/00a7e8/FFFFFF',
-    'https://via.placeholder.com/1000x680/e91e63/FFFFFF',
+    '/images/saas/shop_ar.png',
+    '/images/saas/portfolio_ar.png',
+    '/images/saas/landing_ar.png',
     '/images/saas/desktop_illustration.png'
   ],
   saas_en: [
@@ -43,9 +43,9 @@ const imgAPI = {
     '/images/saas/dahsboared_en.png',
     'https://via.placeholder.com/1000x625/e6f8ff/757575',
     '/images/saas/app-counter.png',
-    'https://via.placeholder.com/1000x680/b44fd4/FFFFFF',
-    'https://via.placeholder.com/1000x680/00a7e8/FFFFFF',
-    'https://via.placeholder.com/1000x680/e91e63/FFFFFF',
+    '/images/saas/shop_en.png',
+    '/images/saas/portfolio_en.png',
+    '/images/saas/landing_en.png',
     '/images/saas/desktop_illustration.png'
   ]
 };

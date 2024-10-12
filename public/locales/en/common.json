@@ -67,14 +67,14 @@
     "counter_providers": "Web Site",
     "feature_title1": "About Us:",
     "feature_titlestrong1": "Wepify is a software company that provides innovative solutions and services",
-    "feature_desc1": "Our audience dashboard shows you pre-built segments like top locations, recent sources of growth, and even customer lifetime value (CLV).",
+    "feature_desc1": "Webify Provides special e-commerce solutions, allowing your company to sell online with ease. We build online stores that are feature-rich, secure, and optimized for user experience and changes. From product catalogs and payment gateways to inventory management, customer support",
     "see_detail": "See Detail",
     "feature_title2": "Everything you need is a",
     "feature_titlestrong2": "unique value proposition",
-    "feature_desc2": "With strong technical foundations, has allowed us to leverage business experts to build hundreds of improvements.",
+    "feature_desc2": "At Webify, we design stylish, professional personal websites tailored to showcase your unique talents and accomplishments. Whether you're an artist, designer, or professional in any field, our personal website solutions are designed to showcase your work in an organized, engaging style that leaves a lasting impression on potential clients and employers. Let us help you stand out with a custom portfolio that reflects your personal brand.",
     "feature_title3": "Accelerating to Intelligent",
     "feature_titlestrong3": "Enterprise",
-    "feature_desc3": "We empowers your marketing, sales and services teams to collaborate across the entire customer lifecycle for more meaningful, memorable experiences.",
+    "feature_desc3": "At Wepify, we specialize in designing landing pages that get results, whether it's to attract leads, promote a product, or enhance brand awareness.",
     "testi_title": "What Our Customers",
     "testi_titlestrong": "Testimonial",
     "pricing_title": "Pricing & Plan",
@@ -88,6 +88,9 @@
     "store_design": "Store Design",
     "portfolio_website_design": "Portfolio Website Design",
     "landing_page_design": "Landing Page Design for Individuals and Businesses",
-    "website_maintenance": "Maintenance and Modification of Various Websites"
+    "website_maintenance": "Maintenance and Modification of Various Websites",
+    "store": "Store",
+    "portfolio": "Portfolio",
+    "landing_page": "Landing Page"
   }
 }

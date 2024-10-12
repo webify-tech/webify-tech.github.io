@@ -90,10 +90,10 @@ function Landing(props) {
           <section id="feature" className={classes.spaceTop}>
             <Feature />
           </section>
-          <section id="testimonials" className={classes.spaceBottomTesti}>
+          <section style={{ display: 'none' }} id="testimonials" className={classes.spaceBottomTesti}>
             <Testimonials />
           </section>
-          <section id="pricing" className={classes.spaceTop}>
+          <section style={{ display: 'none' }} id="pricing" className={classes.spaceTop}>
             <PricingPlan />
           </section>
           <section id="faq" className={classes.spaceTopShort}>
