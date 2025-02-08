@@ -18,7 +18,6 @@ import Faq from '../../components/Faq';
 import NewsEvent from '../../components/NewsEvent';
 import FooterWithDeco from '../../components/Footer/FooterWithDeco';
 import PageNav from '../../components/PageNav';
-import Notification from '../../components/Notification';
 
 const sectionMargin = margin => (margin * 20);
 const useStyles = makeStyles(theme => ({
@@ -106,9 +105,6 @@ function Landing(props) {
         <section id="footer">
           <FooterWithDeco toggleDir={onToggleDir} />
         </section>
-        <Hidden mdDown>
-          <Notification />
-        </Hidden>
         <Hidden mdDown>
           <PageNav />
         </Hidden>

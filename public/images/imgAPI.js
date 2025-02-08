@@ -36,7 +36,7 @@ const imgAPI = {
     '/images/saas/shop_ar.png',
     '/images/saas/portfolio_ar.png',
     '/images/saas/landing_ar.png',
-    '/images/saas/desktop_illustration.png'
+    '/images/saas/desktop_illustration.gif'
   ],
   saas_en: [
     '/images/saas/featur_en.png',
@@ -46,7 +46,7 @@ const imgAPI = {
     '/images/saas/shop_en.png',
     '/images/saas/portfolio_en.png',
     '/images/saas/landing_en.png',
-    '/images/saas/desktop_illustration.png'
+    '/images/saas/desktop_illustration.gif'
   ]
 };
 

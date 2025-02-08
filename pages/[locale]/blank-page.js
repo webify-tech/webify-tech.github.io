@@ -10,7 +10,6 @@ import brand from '~/public/text/brand';
 import { getStaticPaths, makeStaticProps } from '../../lib/getStatic';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import Notification from '../../components/Notification';
 
 const sectionMargin = margin => (margin * 20);
 const useStyles = makeStyles(theme => ({
@@ -68,7 +67,6 @@ function BlankPage(props) {
         <section className={classes.spaceTop}>
           <Footer invert />
         </section>
-        <Notification />
       </div>
     </React.Fragment>
   );

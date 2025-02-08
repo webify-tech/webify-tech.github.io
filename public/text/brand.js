@@ -1,13 +1,12 @@
 module.exports = {
   saas: {
-    name: 'Software',
-    desc: 'Luxiren Saas - React Single Landing Page Template',
-    prefix: 'luxiren',
-    footerText: 'Luxiren Theme 2021',
-    logoText: 'Luxiren Software',
-    projectName: 'Software',
+    name: 'Webify',
+    desc: 'Webify software is a software company that provides innovative solutions and services',
+    prefix: 'webify',
+    footerText: 'Copyright © 2025 Webify Software. All rights reserved.',
+    logoText: 'webify',
+    projectName: 'Webify',
     url: 'luxireact.ux-maestro.com/saas',
     img: '/static/images/saas-logo.png',
-    notifMsg: 'Donec sit amet nulla sed arcu pulvinar ultricies commodo id ligula.'
   }
 };
