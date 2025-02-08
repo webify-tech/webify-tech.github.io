@@ -61,14 +61,7 @@ const featureStyles = makeStyles(theme => ({
       }
     },
     '& $figure': {
-      transformStyle: 'preserve-3d',
       overflow: 'hidden',
-      boxShadow: theme.shadows[2],
-      borderRadius: theme.rounded.medium,
-      background: theme.palette.common.white,
-      padding: theme.spacing(1),
-      paddingTop: theme.spacing(3),
-      margin: theme.spacing(3),
       '& img': {
         width: '100%',
       },
@@ -117,7 +110,6 @@ const featureStyles = makeStyles(theme => ({
     '& $screen': {
       [theme.breakpoints.up('md')]: {
         marginTop: -50,
-        transform: 'rotateY( 30deg )'
       }
     },
     '& $graphic': {

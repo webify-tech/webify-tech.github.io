@@ -14,10 +14,9 @@ import Counter from '../../components/Counter';
 import Feature from '../../components/Feature';
 import Testimonials from '../../components/Testimonials';
 import PricingPlan from '../../components/PricingPlan';
-import Faq from '../../components/Faq';
-import NewsEvent from '../../components/NewsEvent';
 import FooterWithDeco from '../../components/Footer/FooterWithDeco';
 import PageNav from '../../components/PageNav';
+import Gallery from '../../components/Gallery';
 
 const sectionMargin = margin => (margin * 20);
 const useStyles = makeStyles(theme => ({
@@ -95,12 +94,9 @@ function Landing(props) {
           <section style={{ display: 'none' }} id="pricing" className={classes.spaceTop}>
             <PricingPlan />
           </section>
-          <section id="faq" className={classes.spaceTopShort}>
-            <Faq />
+          <section id="my-work" className={clsx(classes.spaceTopShort, classes.spaceBottomShort)}>
+            <Gallery />
           </section>
-          <div className={clsx(classes.spaceTopShort, classes.spaceBottomShort)}>
-            <NewsEvent />
-          </div>
         </main>
         <section id="footer">
           <FooterWithDeco toggleDir={onToggleDir} />

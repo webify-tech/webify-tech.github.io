@@ -58,16 +58,6 @@ function Feature() {
                       <img src={locale === 'ar' ? imgAPI.saas[0] : imgAPI.saas_en[0]} alt="screen" />
                     </figure>
                   </Parallax>
-                  <Hidden smDown>
-                    <Parallax
-                      y={isMobile ? [0, 0] : [-10, 20]}
-                      tagOuter="section"
-                    >
-                      <figure className={clsx(classes.figure, classes.graphic)}>
-                        <img src={locale === 'ar' ? imgAPI.saas[1] : imgAPI.saas_en[1]} alt="illustration" />
-                      </figure>
-                    </Parallax>
-                  </Hidden>
                   <ParallaxMedium />
                 </div>
               </Grid>

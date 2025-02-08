@@ -29,24 +29,36 @@ const imgAPI = {
     'https://via.placeholder.com/640x425/c4cdff/757575',
   ],
   saas: [
-    '/images/saas/featur_ar.png',
+    '/images/saas/featur.png',
     '/images/saas/dahsboared_ar.png',
     'https://via.placeholder.com/1000x625/e6f8ff/757575',
     '/images/saas/app-counter.png',
     '/images/saas/shop_ar.png',
     '/images/saas/portfolio_ar.png',
     '/images/saas/landing_ar.png',
-    '/images/saas/desktop_illustration.gif'
+    '/images/saas/desktop_illustration.png'
   ],
   saas_en: [
-    '/images/saas/featur_en.png',
+    '/images/saas/featur.png',
     '/images/saas/dahsboared_en.png',
     'https://via.placeholder.com/1000x625/e6f8ff/757575',
     '/images/saas/app-counter.png',
     '/images/saas/shop_en.png',
     '/images/saas/portfolio_en.png',
     '/images/saas/landing_en.png',
-    '/images/saas/desktop_illustration.gif'
+    '/images/saas/desktop_illustration.png'
+  ],
+    profile: [
+    '/images/work/build.jpg',
+    '/images/work/clicnic.jpg',
+    '/images/work/furniture.jpg',
+    '/images/work/fast-food.jpg',
+    '/images/work/dentist.jpg',
+    '/images/work/home-renovation.jpg',
+    '/images/work/s29.jpg',
+    '/images/work/hotel.jpg',
+    '/images/work/gym.jpg',
+    '/images/work/build.jpg',
   ]
 };
 

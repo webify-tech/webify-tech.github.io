@@ -143,10 +143,10 @@ const bannerStyles = makeStyles(theme => ({
     '& img': {
       display: 'block',
       [theme.breakpoints.up('md')]: {
-        maxWidth: 400,
+        maxWidth: 350,
       },
       [theme.breakpoints.up('lg')]: {
-        maxWidth: 480,
+        maxWidth: 400,
       }
     }
   },
