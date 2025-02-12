@@ -49,7 +49,7 @@ function Counter() {
               <div className={classes.counterItem}>
                 <div className={classes.text}>
                   <Typography variant="h3" className={text.title}>
-                    {countup(5, play)}
+                    {countup(10, play)}
                   </Typography>
                   <Typography component="p" className={text.subtitle}>
                     <ArrowIcon />

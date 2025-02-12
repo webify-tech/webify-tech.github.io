@@ -165,7 +165,8 @@ const cardsStyles = makeStyles(theme => ({
       position: 'relative',
       transform: 'translate(0, 10px)',
       marginBottom: theme.spacing(3),
-      lineHeight: '36px'
+      lineHeight: '36px',
+      textAlign: 'center',
     },
     '& a': {
       fontSize: 18,
@@ -260,6 +261,46 @@ const cardsStyles = makeStyles(theme => ({
   },
   textReadmore: {
     padding: '0px 8px !important',
+  },
+  dialog: {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: '80vw',
+    height: '80vh',
+    backgroundColor: theme.palette.background.paper,
+    borderRadius: 8,
+    boxShadow: 24,
+    padding: 10,
+    paddingTop: 15,
+  },
+  closeButton: {
+    position: 'absolute',
+    top: 10,
+    direction: 'rtl',
+    width: 40,
+    height: 40,
+  },
+  btn: {
+    color: theme.palette.common.white,
+  },
+  iframe: {
+    width: '100%',
+    height: '100%',
+    paddingTop: 50,
+  },
+  loading: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100%',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    backgroundSize: 'cover'
+  },
+  hide: {
+    display: 'none'
   }
 }));
 

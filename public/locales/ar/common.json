@@ -76,7 +76,9 @@
     "testi_title": "ما عملاؤنا",
     "testi_titlestrong": "شهادة",
     "pricing_title": "التسعير والخطة",
-    "pricing_subtitle": "أفضل قيمة مصممة لمكان عملك ، تبدأ من 24 دولارًا فقط لكل مستخدم / شهر.",
+    "egypt_pound": "جنيه مصري",
+    "saudia_rial": "ريال السعودي",
+    "us_dollar": "دولار امريكي",
     "faq_subtitle": "هل لديك سؤال؟ راجع الأسئلة الشائعة للعثور على إجابتك.",
     "caption_news": "أخبار",
     "caption_event": "حدث",
@@ -90,6 +92,13 @@
     "store": "متجر",
     "portfolio": "موقع شخصي",
     "landing_page": "موقع شركة",
-    "works": "سابقة الاعمال"
+    "view_project": "عرض المشروع",
+    "gallery_nodata": "لا توجد بيانات متاحة",
+    "view_more": "عرض المزيد",
+    "prev_work": "أعمالنا",
+    "main": "الباقة الاساسية",
+    "pro": "الباقة الاحترافية",
+    "vip": "باقة VIP"
+
   }
 }

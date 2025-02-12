@@ -52,7 +52,17 @@ const galleryStyles = makeStyles(theme => ({
   },
   itemCarousel: {
     position: 'relative'
-  }
+  },
+  btnArea: {
+    display: 'flex',
+    justifyContent: 'center',
+    marginTop: theme.spacing(3),
+  },
+  loading: {
+    display: 'flex',
+    justifyContent: 'center',
+    marginTop: theme.spacing(3),
+  },
 }));
 
 export default galleryStyles;

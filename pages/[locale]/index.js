@@ -91,11 +91,11 @@ function Landing(props) {
           <section style={{ display: 'none' }} id="testimonials" className={classes.spaceBottomTesti}>
             <Testimonials />
           </section>
-          <section style={{ display: 'none' }} id="pricing" className={classes.spaceTop}>
-            <PricingPlan />
-          </section>
           <section id="my-work" className={clsx(classes.spaceTopShort, classes.spaceBottomShort)}>
             <Gallery />
+          </section>
+          <section id="pricing">
+            <PricingPlan />
           </section>
         </main>
         <section id="footer">

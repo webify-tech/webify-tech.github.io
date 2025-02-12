@@ -1,52 +1,183 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
 import ScrollAnimation from 'react-scroll-animation-wrapper';
-import clsx from 'clsx';
 import Container from '@material-ui/core/Container';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme } from '@material-ui/core/styles';
 import { useTranslation } from 'next-i18next';
-import { useText } from '~/theme/common';
+import { Button, Grid } from '@material-ui/core';
 import Title from '../Title';
 import PricingCard from '../Cards/Pricing';
 import useStyles from './pricing-plan-style';
+import egypt from '~/public/images/egypt.png';
+import saudiArabia from '~/public/images/saudi-arabia.png';
+import unitedState from '~/public/images/united-states-of-america.png';
 
 const feature = {
-  basic: [
-    'Nam sollicitudin dignissim',
-    'Cras convallis lacus',
-    'Quisque ut metus'
-  ],
-  best: [
-    'Nam sollicitudin dignissim',
-    'Cras convallis lacus',
-    'Quisque ut metus',
-    'Vivamus sit amet',
-    'Cras convallis lacus orci'
-  ],
-  pro: [
-    'Nam sollicitudin dignissim',
-    'Cras convallis lacus',
-    'Nulla lobortis nunc',
-    'Vitae scelerisque',
-    'Duis sed augue'
-  ],
-  enterprise: [
-    'Nam sollicitudin dignissim',
-    'Pellentesque ac bibendum ',
-    'Vestibulum consequat',
-    'Donec commodo',
-    'Duis tristique metus'
-  ],
+  main: {
+    prices: {
+      us: '50 $',
+      eg: '2500 جنية',
+      sd: '190 ريال'
+    },
+    data: [
+      {
+        ar: ' رابط خاص (دومين .COM)',
+        en: 'Special Link (Domain .COM)'
+      },
+      {
+        ar: ' شهادة أمان HTTPs - SSL',
+        en: 'HTTPs - SSL Certificate'
+      },
+      {
+        ar: ' منتجات و طلبات لا محدودة',
+        en: 'Unlimited Products and Orders'
+      },
+      {
+        ar: ' خيارات اللون والمقاس للمنتج',
+        en: 'Color and Size Options for Products'
+      },
+      {
+        ar: ' القسائم و كوبونات التخفيض',
+        en: 'Discount Coupons and Vouchers'
+      },
+      {
+        ar: 'تصميم متجاوب مع الأجهزة المحمولة',
+        en: 'Responsive Design for Mobile Devices'
+      },
+      {
+        ar: 'الدعم الفني على مدار الساعة',
+        en: '24/7 Technical Support'
+      },
+      {
+        ar: 'التحكم بالمخزون والمبيعات',
+        en: 'Inventory and Sales Control'
+      },
+      {
+        ar: ' الموقع 4 صفحات',
+        en: '4 Pages Website',
+      },
+      {
+        ar: 'لغة واحدة',
+        en: 'One Language',
+      }
+    ]
+  },
+  pro: {
+    prices: {
+      us: '100 $',
+      eg: '5000 جنية',
+      sd: '380 ريال'
+    },
+    data: [
+      {
+        ar: ' رابط خاص (دومين .COM)',
+        en: 'Special Link (Domain .COM)'
+      },
+      {
+        ar: ' شهادة أمان HTTPs - SSL',
+        en: 'HTTPs - SSL Certificate'
+      },
+      {
+        ar: ' منتجات و طلبات لا محدودة',
+        en: 'Unlimited Products and Orders'
+      },
+      {
+        ar: 'الربط مع بوابات الدفع',
+        en: 'Payment Services'
+      },
+      {
+        ar: ' خيارات اللون والمقاس للمنتج',
+        en: 'Color and Size Options for Products'
+      },
+      {
+        ar: ' القسائم و كوبونات التخفيض',
+        en: 'Discount Coupons and Vouchers'
+      },
+      {
+        ar: 'تصميم متجاوب مع الأجهزة المحمولة',
+        en: 'Responsive Design for Mobile Devices'
+      },
+      {
+        ar: 'الدعم الفني على مدار الساعة',
+        en: '24/7 Technical Support'
+      },
+      {
+        ar: 'التحكم بالمخزون والمبيعات',
+        en: 'Inventory and Sales Control'
+      },
+      {
+        ar: ' عدد الصفحات غير محدود',
+        en: 'Unlimited Pages',
+      },
+      {
+        ar: 'لغتين',
+        en: 'Two Languages',
+      },
+      {
+        ar: 'ايملات رسمية باسم الشركة',
+        en: 'Company Brand Emails',
+      }
+    ]
+  },
+  vip: {
+    prices: {
+      us: '!',
+      eg: '!',
+      sd: '!'
+    },
+    data: [
+      {
+        ar: 'مميزات الباقة الاحترافية',
+        en: 'Pro Package Features',
+      },
+      {
+        ar: 'دعم تطبيق Android',
+        en: 'Android App Support',
+      },
+      {
+        ar: 'دعم تعدد العملات',
+        en: 'Multiple Currencies Support',
+      },
+      {
+        ar: 'دعم تعدد اللغات',
+        en: 'Multiple Languages Support',
+      },
+      {
+        ar: 'دعم نظام التسويق بالعمولة',
+        en: 'Affiliate Marketing Support',
+      },
+      {
+        ar: 'دعم خاصية تعدد التجار',
+        en: 'Multiple Stores Support',
+      },
+      {
+        ar: 'دعم انظمة الحجز المتقدم',
+        en: 'Advanced Booking System Support',
+      },
+      {
+        ar: 'دعم انظمة الجملة والقطاعي',
+        en: 'Sentence and Paragraph System Support',
+      },
+      {
+        ar: 'دعم فني خاص VIP',
+        en: 'Special VIP Support',
+      },
+      {
+        ar: 'واكثر حسب طلبك .....!',
+        en: 'And More According to Your Needs .....!',
+      }
+    ]
+  }
 };
 
 function PricingPlan() {
   const classes = useStyles();
-  const text = useText();
   const theme = useTheme();
   const { t } = useTranslation('common');
   const isDesktop = useMediaQuery(theme.breakpoints.up('lg'));
+  const [currentcy, setCurrentcy] = React.useState('eg');
 
+  console.log(feature.main.prices[currentcy]);
   return (
     <div className={classes.root}>
       <div className={classes.decoration}>
@@ -64,24 +195,41 @@ function PricingPlan() {
             </strong>
           </Title>
         </div>
-        <Typography className={clsx(classes.subtitle, text.subtitle2)} display="block" align="center">
-          {t('saas-landing.pricing_subtitle')}
-        </Typography>
+        <Grid container spacing={1} justify="center" className={classes.currency}>
+          <Grid item>
+            <Button variant={currentcy === 'eg' ? 'contained' : 'outlined'} onClick={() => setCurrentcy('eg')} color="primary">
+              <img width="20px" src={egypt} alt="eg" />
+              {t('saas-landing.egypt_pound')}
+            </Button>
+          </Grid>
+          <Grid item>
+            <Button variant={currentcy === 'sd' ? 'contained' : 'outlined'} onClick={() => setCurrentcy('sd')} color="primary">
+              <img width="20px" src={saudiArabia} alt="sd" />
+              {t('saas-landing.saudia_rial')}
+            </Button>
+          </Grid>
+          <Grid item>
+            <Button variant={currentcy === 'us' ? 'contained' : 'outlined'} onClick={() => setCurrentcy('us')} color="primary">
+              <img width="20px" src={unitedState} alt="us" />
+              {t('saas-landing.us_dollar')}
+            </Button>
+          </Grid>
+        </Grid>
+
         <div className={classes.pricingWrap}>
           <ScrollAnimation
             animateOnce
             animateIn="fadeInUpShort"
             offset={-200}
-            delay={200}
+            delay={600}
             duration={0.4}
           >
             <div className={classes.item}>
               <PricingCard
-                title="Basic"
-                price={0}
-                featureList={feature.basic}
+                title={t('saas-landing.main')}
+                price={feature.main.prices[currentcy]}
+                featureList={feature.main.data}
                 desc="Interdum et malesuada fames ac ante ipsum primis in faucibus. "
-                type="basic"
               />
             </div>
           </ScrollAnimation>
@@ -94,27 +242,11 @@ function PricingPlan() {
           >
             <div className={classes.item}>
               <PricingCard
-                title="Best Value"
-                price={24}
-                featureList={feature.best}
+                title={t('saas-landing.pro')}
+                price={feature.pro.prices[currentcy]}
+                featureList={feature.pro.data}
                 desc="Interdum et malesuada fames ac ante ipsum primis in faucibus. "
                 type="value"
-              />
-            </div>
-          </ScrollAnimation>
-          <ScrollAnimation
-            animateOnce
-            animateIn="fadeInUpShort"
-            offset={-200}
-            delay={600}
-            duration={0.4}
-          >
-            <div className={classes.item}>
-              <PricingCard
-                title="Pro"
-                price={54}
-                featureList={feature.pro}
-                desc="Interdum et malesuada fames ac ante ipsum primis in faucibus. "
               />
             </div>
           </ScrollAnimation>
@@ -127,9 +259,9 @@ function PricingPlan() {
           >
             <div className={classes.item}>
               <PricingCard
-                title="Enterprise"
-                price={99}
-                featureList={feature.enterprise}
+                title={t('saas-landing.vip')}
+                price={feature.vip.prices[currentcy]}
+                featureList={feature.vip.data}
                 desc=" Interdum et malesuada fames ac ante ipsum primis in faucibus. "
               />
             </div>

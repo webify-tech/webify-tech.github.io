@@ -77,7 +77,9 @@
     "testi_title": "What Our Customers",
     "testi_titlestrong": "Testimonial",
     "pricing_title": "Pricing & Plan",
-    "pricing_subtitle": "The best value designed for your workplace, starting at just $24/user/month.",
+    "egypt_pound": "جنيه مصري",
+    "saudia_rial": "ريال السعودي",
+    "us_dollar": "دولار امريكي",
     "faq_subtitle": "Have a question? Check out our frequently asked questions to find your answer.",
     "caption_news": "news",
     "caption_event": "event",
@@ -91,6 +93,12 @@
     "store": "Store",
     "portfolio": "Portfolio",
     "landing_page": "Landing Page",
-    "works": "Our Works"
+    "view_project": "View Project",
+    "gallery_nodata": "No data available",
+    "view_more": "View More",
+    "prev_work": "Our Work",
+    "main": "Basic",
+    "pro": "Professional",
+    "vip": "VIP"
   }
 }

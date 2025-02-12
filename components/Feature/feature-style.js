@@ -36,7 +36,7 @@ const featureStyles = makeStyles(theme => ({
   item: {
     position: 'relative',
     minHeight: 320,
-    marginBottom: theme.spacing(20),
+    marginBottom: theme.spacing(10),
     '&$last': {
       marginBottom: theme.spacing(10)
     },
@@ -44,7 +44,7 @@ const featureStyles = makeStyles(theme => ({
       marginBottom: theme.spacing(15)
     },
     [theme.breakpoints.down('sm')]: {
-      textAlign: 'center',
+      textAlign: 'start',
     },
     '& h6': {
       marginBottom: theme.spacing(5),

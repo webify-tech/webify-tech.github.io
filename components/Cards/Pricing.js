@@ -4,6 +4,7 @@ import Paper from '@material-ui/core/Paper';
 import clsx from 'clsx';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import { useTranslation } from 'react-i18next';
 import useStyles from './cards-style';
 
 export default function Pricing(props) {
@@ -15,6 +16,7 @@ export default function Pricing(props) {
     desc,
     type,
   } = props;
+  const { i18n: { language: locale } } = useTranslation('common');
   const setType = cardType => {
     switch (cardType) {
       case 'basic':
@@ -30,13 +32,14 @@ export default function Pricing(props) {
       <div className={classes.title}>
         <Typography>{title}</Typography>
         <Typography variant="h4">
-          {price > 0 && <span>$</span>}
-          {price > 0 ? price : 'Free'}
+          {price}
         </Typography>
       </div>
       <ul>
         {featureList.map((item, index) => (
-          <li key={index.toString()}>{item}</li>
+          <li key={index.toString()}>
+            {locale === 'ar' ? item.ar : item.en}
+          </li>
         ))}
       </ul>
       <div className={classes.btnArea}>

@@ -3,95 +3,46 @@ import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import clsx from 'clsx';
 import { useTranslation } from 'next-i18next';
-import imgAPI from '~/public/images/imgAPI';
+import { Button } from '@material-ui/core';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import projects from '~/public/data/projects.json';
+import arProjects from '~/public/data/projects-ar.json';
 import ImageThumbCard from '../Cards/ImageThumb';
 import Title from '../Title';
 import useStyle from './gallery-style';
 
-const portfolio = [
-  {
-    img: imgAPI.profile[0],
-    title: 'Buiding',
-    link: 'linkofthisitem.com',
-    size: 'short',
-    category: 'cat1'
-  },
-  {
-    img: imgAPI.profile[1],
-    title: 'Clinic',
-    link: 'linkofthisitem.com',
-    size: 'long',
-    category: 'cat2'
-  },
-  {
-    img: imgAPI.profile[2],
-    title: 'Furniture',
-    link: 'linkofthisitem.com',
-    size: 'short',
-    category: 'cat3'
-  },
-  {
-    img: imgAPI.profile[3],
-    title: 'fast food',
-    link: 'linkofthisitem.com',
-    size: 'long',
-    category: 'cat1'
-  },
-  {
-    img: imgAPI.profile[4],
-    title: 'dentist',
-    link: 'linkofthisitem.com',
-    size: 'short',
-    category: 'cat2'
-  },
-  {
-    img: imgAPI.profile[5],
-    title: 'home-renovation',
-    link: 'linkofthisitem.com',
-    size: 'short',
-    category: 'cat3'
-  },
-  {
-    img: imgAPI.profile[6],
-    title: 's29',
-    link: 'linkofthisitem.com',
-    size: 'short',
-    category: 'cat1'
-  },
-  {
-    img: imgAPI.profile[7],
-    title: 'hotel',
-    link: 'linkofthisitem.com',
-    size: 'short',
-    category: 'cat2'
-  },
-  {
-    img: imgAPI.profile[8],
-    title: 'gym',
-    link: 'linkofthisitem.com',
-    size: 'long',
-    category: 'cat2'
-  },
-];
-
 function Gallery() {
   const classes = useStyle();
   const { t } = useTranslation('common');
-  const [data, setData] = useState([]);
+  const [data, setData] = useState([arProjects]);
+  const { locale } = useTranslation();
+  const [visibleItems, setVisibleItems] = useState(9);
+  const [loading, setLoading] = useState(false);
+  const handleViewMore = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setVisibleItems((prevVisibleItems) => prevVisibleItems + 9);
+      setLoading(false);
+    }, 500);
+  };
   useEffect(() => {
-    setData(portfolio);
-  }, []);
+    if (locale === 'en') {
+      setData(projects);
+    } else {
+      setData(arProjects);
+    }
+  }, [locale]);
 
   return (
     <div className={classes.root}>
       <Container>
-        <Title>
+        <Title align="center">
           <strong>
-            {t('profile-landing.works')}
+            {t('saas-landing.prev_work')}
           </strong>
         </Title>
         <div className={classes.massonry}>
-          {data.map((item, index) => (
+          {data?.slice(0, visibleItems)?.map((item, index) => (
             <div
               className={clsx(classes.item, classes.loaded)}
               key={index.toString()}
@@ -101,12 +52,28 @@ function Gallery() {
                 img={item.img}
                 title={item.title}
                 link={item.link}
-                size={item.size}
+                size="short"
               />
             </div>
           ))}
         </div>
-        {data.length < 1 && <Typography variant="button" component="p" align="center">{t('profile-landing.gallery_nodata')}</Typography>}
+        <div className={classes.loading}>
+          {loading && <CircularProgress />}
+        </div>
+        {data.length > visibleItems && (
+          <div className={classes.btnArea}>
+            <Button
+              loading={loading.toString()}
+              variant="contained"
+              color="primary"
+              className={classes.btn}
+              onClick={handleViewMore}
+            >
+              {t('saas-landing.view_more')}
+            </Button>
+          </div>
+        )}
+        {data.length < 1 && <Typography variant="button" component="p" align="center">{t('sass-landing.gallery_nodata')}</Typography>}
       </Container>
     </div>
   );
