@@ -99,6 +99,11 @@
     "prev_work": "Our Work",
     "main": "Basic",
     "pro": "Professional",
-    "vip": "VIP"
+    "vip": "VIP",
+    "annual_renew": "Annual Renewal {{price}}",
+    "dont_heditate_contact_us": "Don't hesitate to contact us",
+    "subscribe_now": "Subscribe Now",
+    "subscribe_text": "(Webify) Subscribe to {{value}}​"
+
   }
 }

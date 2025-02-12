@@ -98,7 +98,10 @@
     "prev_work": "أعمالنا",
     "main": "الباقة الاساسية",
     "pro": "الباقة الاحترافية",
-    "vip": "باقة VIP"
-
+    "vip": "باقة VIP",
+    "annual_renew": "تجديد سنوي {{price}}",
+    "dont_heditate_contact_us": "لا تتردد ابدا بتواصل معنا",
+    "subscribe_now": "اشترك الان",
+    "subscribe_text": "(ويبيفاي)  اشتراك في {{value}} ​"
   }
 }

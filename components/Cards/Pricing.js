@@ -15,8 +15,11 @@ export default function Pricing(props) {
     featureList,
     desc,
     type,
+    text
   } = props;
   const { i18n: { language: locale } } = useTranslation('common');
+  const { t } = useTranslation('common');
+
   const setType = cardType => {
     switch (cardType) {
       case 'basic':
@@ -45,12 +48,14 @@ export default function Pricing(props) {
       <div className={classes.btnArea}>
         <Typography display="block" className={classes.desc}>{desc}</Typography>
         <Button
+          target="_blank"
           variant="contained"
           color={type === 'basic' ? 'secondary' : 'primary'}
           className={classes.button}
           size="large"
+          href={`https://wa.me/+201285949513?text=${encodeURIComponent(text)}`}
         >
-          Choose Plan
+          {t('saas-landing.subscribe_now')}
         </Button>
       </div>
     </Paper>
@@ -58,6 +63,7 @@ export default function Pricing(props) {
 }
 
 Pricing.propTypes = {
+  text: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   featureList: PropTypes.array.isRequired,

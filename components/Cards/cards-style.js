@@ -18,6 +18,7 @@ const cardsStyles = makeStyles(theme => ({
         listStyle: 'none',
         fontSize: 16,
         textAlign: 'center',
+        minWidth: '220px',
         padding: theme.spacing(),
         borderBottom: `2px dashed ${theme.palette.divider}`,
         '&:last-child': {
@@ -28,7 +29,11 @@ const cardsStyles = makeStyles(theme => ({
     '&:hover': {
       boxShadow: `0 0 20px 5px ${theme.palette.type === 'dark' ? theme.palette.background.default : theme.palette.primary.light}`,
       border: `1px solid ${theme.palette.primary.main}`
+    },
+    [theme.breakpoints.down('xs')]: {
+      maxWidth: '100%',
     }
+
   },
   title: {
     padding: theme.spacing(5, 0, 2),

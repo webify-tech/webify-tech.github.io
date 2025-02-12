@@ -37,7 +37,10 @@ const pricingStyles = makeStyles(theme => ({
     justifyContent: 'center',
     [theme.breakpoints.down('sm')]: {
       flexWrap: 'wrap',
-      justifyContent: 'space-around'
+      justifyContent: 'space-around',
+      '& > div': {
+        flexGrow: 1
+      }
     },
     [theme.breakpoints.up('lg')]: {
       padding: theme.spacing(0, 5),
@@ -55,7 +58,15 @@ const pricingStyles = makeStyles(theme => ({
     },
     '& button': {
       padding: '5px 15px'
-    }
+    },
+    // [theme.breakpoints.down('xs')]: {
+    //   '& > div': {
+    //     padding: '1px'
+    //   },
+    //   '& button': {
+    //     padding: '5px 5px'
+    //   }
+    // }
   }
 }));
 

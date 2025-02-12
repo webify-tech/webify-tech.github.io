@@ -19,6 +19,15 @@ const feature = {
       eg: '2500 جنية',
       sd: '190 ريال'
     },
+    renew: {
+      us: '25 $',
+      eg: '1250 جنية',
+      sd: '95 ريال'
+    },
+    subscribText: {
+      ar: '(ويبيفاي)  اشتراك في تصميم موقع الباقة الاساسية ',
+      en: '(Webify) Subscribe to Basic Package Design'
+    },
     data: [
       {
         ar: ' رابط خاص (دومين .COM)',
@@ -67,6 +76,15 @@ const feature = {
       us: '100 $',
       eg: '5000 جنية',
       sd: '380 ريال'
+    },
+    renew: {
+      us: '50 $',
+      eg: '2500 جنية',
+      sd: '190 ريال'
+    },
+    subscribText: {
+      ar: '(ويبيفاي) اشتراك في تصميم موقع الباقة البرو ',
+      en: '(Webify) Subscribe to Pro Package Design'
     },
     data: [
       {
@@ -125,6 +143,15 @@ const feature = {
       eg: '!',
       sd: '!'
     },
+    renew: {
+      us: '!',
+      eg: '!',
+      sd: '!'
+    },
+    subscribText: {
+      ar: '(ويبيفاي) VIP اشتراك في تصميم موقع الباقة',
+      en: '(Webify) Subscribe to VIP Package Design'
+    },
     data: [
       {
         ar: 'مميزات الباقة الاحترافية',
@@ -173,11 +200,9 @@ const feature = {
 function PricingPlan() {
   const classes = useStyles();
   const theme = useTheme();
-  const { t } = useTranslation('common');
+  const { t, i18n: { language: locale } } = useTranslation('common');
   const isDesktop = useMediaQuery(theme.breakpoints.up('lg'));
   const [currentcy, setCurrentcy] = React.useState('eg');
-
-  console.log(feature.main.prices[currentcy]);
   return (
     <div className={classes.root}>
       <div className={classes.decoration}>
@@ -226,10 +251,11 @@ function PricingPlan() {
           >
             <div className={classes.item}>
               <PricingCard
+                text={feature.main.subscribText[locale]}
                 title={t('saas-landing.main')}
                 price={feature.main.prices[currentcy]}
                 featureList={feature.main.data}
-                desc="Interdum et malesuada fames ac ante ipsum primis in faucibus. "
+                desc={`${t('saas-landing.annual_renew', { price: feature.main.renew[currentcy] })}`}
               />
             </div>
           </ScrollAnimation>
@@ -242,10 +268,11 @@ function PricingPlan() {
           >
             <div className={classes.item}>
               <PricingCard
+                text={feature.pro.subscribText[locale]}
                 title={t('saas-landing.pro')}
                 price={feature.pro.prices[currentcy]}
                 featureList={feature.pro.data}
-                desc="Interdum et malesuada fames ac ante ipsum primis in faucibus. "
+                desc={`${t('saas-landing.annual_renew', { price: feature.pro.renew[currentcy] })}`}
                 type="value"
               />
             </div>
@@ -259,10 +286,11 @@ function PricingPlan() {
           >
             <div className={classes.item}>
               <PricingCard
+                text={feature.vip.subscribText[locale]}
                 title={t('saas-landing.vip')}
                 price={feature.vip.prices[currentcy]}
                 featureList={feature.vip.data}
-                desc=" Interdum et malesuada fames ac ante ipsum primis in faucibus. "
+                desc={t('saas-landing.dont_heditate_contact_us')}
               />
             </div>
           </ScrollAnimation>
