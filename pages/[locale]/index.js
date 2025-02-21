@@ -9,14 +9,14 @@ import brand from '~/public/text/brand';
 import { getStaticPaths, makeStaticProps } from '../../lib/getStatic';
 import Header from '../../components/Header';
 import Banner from '../../components/Banner';
-import CompanyLogo from '../../components/Numbers';
+import AboutUs from '../../components/Numbers';
 import Counter from '../../components/Counter';
 import Feature from '../../components/Feature';
-import Testimonials from '../../components/Testimonials';
 import PricingPlan from '../../components/PricingPlan';
 import FooterWithDeco from '../../components/Footer/FooterWithDeco';
 import PageNav from '../../components/PageNav';
 import Gallery from '../../components/Gallery';
+import Service from '../../components/Service';
 
 const sectionMargin = margin => (margin * 20);
 const useStyles = makeStyles(theme => ({
@@ -79,19 +79,19 @@ function Landing(props) {
           <section id="home">
             <Banner />
           </section>
-          <section id="logos">
-            <CompanyLogo />
+          <section id="about_us">
+            <AboutUs />
           </section>
           <section>
             <Counter />
           </section>
-          <section id="feature" className={classes.spaceTop}>
+          <section className={classes.spaceTop}>
             <Feature />
           </section>
-          <section style={{ display: 'none' }} id="testimonials" className={classes.spaceBottomTesti}>
-            <Testimonials />
+          <section id="service" className={classes.spaceTop}>
+            <Service />
           </section>
-          <section id="my-work" className={clsx(classes.spaceTopShort, classes.spaceBottomShort)}>
+          <section id="our_work" className={clsx(classes.spaceTopShort, classes.spaceBottomShort)}>
             <Gallery />
           </section>
           <section id="pricing">

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import clsx from 'clsx';
 import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
 import Container from '@material-ui/core/Container';
@@ -9,14 +9,11 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import ScrollAnimation from 'react-scroll-animation-wrapper';
 import Grid from '@material-ui/core/Grid';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
 import { useTranslation } from 'next-i18next';
 import CheckIcon from '@material-ui/icons/Check';
 import { useTextAlign, useText } from '~/theme/common';
 import imgAPI from '~/public/images/imgAPI';
 import ParallaxMedium from '../Parallax/Medium';
-import ParallaxLarge from '../Parallax/Large';
 import Title from '../Title';
 import useStyles from './feature-style';
 
@@ -26,14 +23,9 @@ function Feature() {
   const align = useTextAlign();
   const theme = useTheme();
 
-  const [value, setValue] = useState(0);
   const { t, i18n: { language: locale } } = useTranslation('common');
   const isDesktop = useMediaQuery(theme.breakpoints.up('lg'));
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
 
   return (
     <div className={classes.root}>
@@ -167,68 +159,6 @@ function Feature() {
                 </div>
               </Grid>
             </Grid>
-          </div>
-          <div className={clsx(classes.item, classes.last)}>
-            <Title align="center">
-              {t('saas-landing.feature_title3')}
-            </Title>
-            <div className={classes.tab}>
-              <Grid container spacing={6}>
-                {!isMobile && <Grid item md={1} xs={12} />}
-                <Grid item md={10} xs={12}>
-                  <Tabs
-                    value={value}
-                    onChange={handleChange}
-                    indicatorColor="primary"
-                    textColor="primary"
-                    centered
-                  >
-                    <Tab classes={{ root: classes.tabLabel, selected: classes.selected }} label={t('saas-landing.store')} />
-                    <Tab classes={{ root: classes.tabLabel, selected: classes.selected }} label={t('saas-landing.portfolio')} />
-                    <Tab classes={{ root: classes.tabLabel, selected: classes.selected }} label={t('saas-landing.landing_page')} />
-                  </Tabs>
-                  <div className={classes.tabContent}>
-                    {value === 0 && (
-                      <section>
-                        <Typography component="h6" display="block" align="center" className={text.subtitle2}>
-                          {t('saas-landing.feature_desc1')}
-                        </Typography>
-                        <div className={classes.illustrationCenter}>
-                          <figure className={clsx(classes.figure, classes.screen)}>
-                            <img src={locale === 'ar' ? imgAPI.saas[4] : imgAPI.saas_en[4]} alt="screen" />
-                          </figure>
-                        </div>
-                      </section>
-                    )}
-                    {value === 1 && (
-                      <section>
-                        <Typography component="h6" display="block" align="center" className={text.subtitle2}>
-                          {t('saas-landing.feature_desc2')}
-                        </Typography>
-                        <div className={classes.illustrationCenter}>
-                          <figure className={clsx(classes.figure, classes.screen)}>
-                            <img src={locale === 'ar' ? imgAPI.saas[5] : imgAPI.saas_en[5]} alt="screen" />
-                          </figure>
-                        </div>
-                      </section>
-                    )}
-                    {value === 2 && (
-                      <section>
-                        <Typography component="h6" display="block" align="center" className={text.subtitle2}>
-                          {t('saas-landing.feature_desc3')}
-                        </Typography>
-                        <div className={classes.illustrationCenter}>
-                          <figure className={clsx(classes.figure, classes.screen)}>
-                            <img src={locale === 'ar' ? imgAPI.saas[6] : imgAPI.saas_en[6]} alt="screen" />
-                          </figure>
-                        </div>
-                      </section>
-                    )}
-                    <ParallaxLarge />
-                  </div>
-                </Grid>
-              </Grid>
-            </div>
           </div>
         </ParallaxProvider>
       </Container>

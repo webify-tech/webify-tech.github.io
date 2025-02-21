@@ -149,6 +149,7 @@ function Settings(props) {
         }}
       >
         <List
+          style={{ display: 'none' }}
           component="nav"
           className={classes.modeMenu}
           aria-label="Mode-menu"

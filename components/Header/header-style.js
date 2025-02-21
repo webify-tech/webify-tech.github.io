@@ -316,6 +316,10 @@ const headerStyles = makeStyles(theme => ({
   dividerSidebar: {
     background: 'rgba(255, 255, 255, 0.2)',
     margin: theme.spacing(3, 0)
+  },
+  anchorlink: {
+    textDecoration: 'none',
+    fontWeight: 'bold',
   }
 }));
 

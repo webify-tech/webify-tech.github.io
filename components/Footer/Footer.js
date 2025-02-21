@@ -17,40 +17,38 @@ import OutlinedInput from '@material-ui/core/OutlinedInput';
 import MenuItem from '@material-ui/core/MenuItem';
 import Link from '@material-ui/core/Link';
 import IconButton from '@material-ui/core/IconButton';
+import MailIcon from '@material-ui/icons/Mail';
+import PhoneAndroid from '@material-ui/icons/Phone';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 import logo from '~/public/images/saas-logo.svg';
-import brand from '~/public/text/brand';
 import useStyles from './footer-style';
 import languageDetector from '../../lib/languageDetector';
 import i18nextConfig from '../../next-i18next.config';
 
 function Copyright() {
+  const { t } = useTranslation('common');
   return (
     <Typography variant="body2" display="block" align="center" color="textSecondary">
       &copy;&nbsp;
-      {brand.saas.footerText}
+      {t('saas-landing.copyright', { year: new Date().getFullYear() })}
     </Typography>
   );
 }
 
-const footers = [
-  {
-    title: 'Company',
-    description: ['Team', 'History', 'Contact us', 'Locations'],
-    link: ['#team', '#history', '#contact-us', '#locations'],
-  },
-  {
-    title: 'Resources',
-    description: ['Resource', 'Resource name', 'Another resource', 'Final resource'],
-    link: ['#resource', '#resource-name', '#another-resource', '#final-resource'],
-  },
-  {
-    title: 'Legal',
-    description: ['Privacy policy', 'Terms of use', 'Terms Condition'],
-    link: ['#privacy-policy', '#terms-of-use'],
-  },
-];
+const Phone = () => (
+  <Grid container alignItems="center">
+    <PhoneAndroid />
+    <span style={{ direction: 'ltr', textAlign: 'left' }}>+20 128 594 9513</span>
+  </Grid>
+);
+const Mail = () => (
+  <Grid container alignItems="center">
+    <MailIcon />
+    <span>webify.tech.eg@gmail.com</span>
+  </Grid>
+);
 
 function Footer(props) {
   const [ctn, setCtn] = useState(null);
@@ -67,6 +65,19 @@ function Footer(props) {
     lang: i18n.language
   });
 
+  const footers = [
+    {
+      title: t('saas-landing.fast_links'),
+      isLinks: true,
+      description: [t('saas-landing.header_about_us'), t('saas-landing.header_service'), t('saas-landing.header_our_work'), t('saas-landing.header_pricing')],
+      link: ['#about_us', '#service', '#our_work', '#pricing'],
+    },
+    {
+      title: t('saas-landing.contact_us'),
+      description: [<Phone />, <Mail />],
+      link: ['https://wa.me/+201285949513', 'mailto:webify.tech.eg@gmail.com', '', ''],
+    },
+  ];
   useEffect(() => {
     setCtn(document.getElementById('main-wrap'));
   }, []);
@@ -111,15 +122,15 @@ function Footer(props) {
           <div className={classes.logo}>
             <img src={logo} alt="logo" />
             <Typography variant="h6" color="textPrimary">
-              {brand.saas.projectName}
+              {t('saas-landing.banner_titlestrong')}
             </Typography>
           </div>
           <Copyright />
         </Grid>
         <Grid item xs={12} md={6}>
-          <Grid container spacing={4} justifyContent="space-evenly">
+          <Grid container spacing={2} justifyContent="space-evenly">
             {footers.map(footer => (
-              <Grid item xs={12} md={3} key={footer.title} className={classes.siteMapItem}>
+              <Grid item xs={12} md={5} key={footer.title} className={classes.siteMapItem}>
                 {isDesktop && (
                   <div>
                     <Typography variant="h6" className={classes.title} color="textPrimary" gutterBottom>
@@ -128,9 +139,19 @@ function Footer(props) {
                     <ul>
                       {footer.description.map((item, index) => (
                         <li key={item}>
-                          <Link href={footer.link[index]} variant="subtitle1" color="textSecondary">
-                            {item}
-                          </Link>
+                          {
+                            footer?.isLinks ? (
+                              <AnchorLink offset={100} href={footer.link[index]} variant="subtitle1" color="textSecondary">
+                                {item}
+                              </AnchorLink>
+                            )
+                              : (
+                                <Link target="_blank" href={footer.link[index]} variant="subtitle1" color="textSecondary">
+                                  {item}
+                                </Link>
+                            )
+                          }
+
                         </li>
                       ))}
                     </ul>
@@ -174,10 +195,12 @@ function Footer(props) {
         </Grid>
         <Grid item xs={12} md={3}>
           <div className={classes.socmed}>
-            <IconButton aria-label="FB" className={classes.margin} size="small">
-              <i className="ion-logo-facebook" />
-            </IconButton>
-            <IconButton aria-label="TW" className={classes.margin} size="small">
+            <Link target="_blank" href="https://www.facebook.com/profile.php?id=61564405365963">
+              <IconButton aria-label="FB" className={classes.margin} size="small">
+                <i className="ion-logo-facebook" />
+              </IconButton>
+            </Link>
+            {/* <IconButton aria-label="TW" className={classes.margin} size="small">
               <i className="ion-logo-twitter" />
             </IconButton>
             <IconButton aria-label="IG" className={classes.margin} size="small">
@@ -185,7 +208,7 @@ function Footer(props) {
             </IconButton>
             <IconButton aria-label="LI" className={classes.margin} size="small">
               <i className="ion-logo-linkedin" />
-            </IconButton>
+            </IconButton> */}
           </div>
           <Select
             value={values.lang}
@@ -218,7 +241,7 @@ Footer.propTypes = {
 
 Footer.defaultProps = {
   invert: false,
-  toggleDir: () => {},
+  toggleDir: () => { },
 };
 
 export default Footer;

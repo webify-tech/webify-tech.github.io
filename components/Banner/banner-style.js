@@ -103,6 +103,10 @@ const bannerStyles = makeStyles(theme => ({
       }
     },
   },
+  bannerBtn: {
+    color: theme.palette.common.white,
+    border: `1px solid ${theme.palette.secondary.main}`,
+  },
   icon: {},
   playBtn: {
     textTransform: 'uppercase',

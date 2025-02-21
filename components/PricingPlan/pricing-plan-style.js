@@ -59,14 +59,7 @@ const pricingStyles = makeStyles(theme => ({
     '& button': {
       padding: '5px 15px'
     },
-    // [theme.breakpoints.down('xs')]: {
-    //   '& > div': {
-    //     padding: '1px'
-    //   },
-    //   '& button': {
-    //     padding: '5px 5px'
-    //   }
-    // }
+
   }
 }));
 

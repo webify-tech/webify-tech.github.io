@@ -1,27 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import Button from '@material-ui/core/Button';
-import Icon from '@material-ui/core/Icon';
-import clsx from 'clsx';
 import Typography from '@material-ui/core/Typography';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
-import { useTheme } from '@material-ui/core/styles';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Grid from '@material-ui/core/Grid';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 import { useTranslation } from 'next-i18next';
-import routeLink from '~/public/text/link';
 import { useText } from '~/theme/common';
 import Checkbox from './Checkbox';
 import SocialAuth from './SocialAuth';
-import Title from '../Title/TitleSecondary';
 import AuthFrame from './AuthFrame';
 import useStyles from './form-style';
 
 function Register() {
   const classes = useStyles();
   const text = useText();
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   const { t } = useTranslation('common');
   const [values, setValues] = useState({
@@ -58,13 +50,6 @@ function Register() {
   return (
     <AuthFrame title={t('register_title')} subtitle={t('register_subtitle')}>
       <div>
-        <div className={classes.head}>
-          <Title align={isMobile ? 'center' : 'left'}>{t('register')}</Title>
-          <Button size="small" className={classes.buttonLink} href={routeLink.saas.login}>
-            <Icon className={clsx(classes.icon, classes.signArrow)}>arrow_forward</Icon>
-            {t('register_already')}
-          </Button>
-        </div>
         <SocialAuth />
         <div className={classes.separator}>
           <Typography>{t('register_or')}</Typography>

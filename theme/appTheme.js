@@ -11,7 +11,7 @@ const appTheme = (color, mode) => ({
   },
   typography: {
     fontFamily: [
-      'IBM Plex Sans Arabic',
+      'Marhey',
       'Open Sans',
       'sans-serif',
     ].join(','),

@@ -55,6 +55,9 @@
     "header_pricing": "pricing and plan",
     "header_faq": "faq",
     "header_contact": "contact",
+    "header_about_us": "about us",
+    "header_service": "service",
+    "header_our_work": "our works",
     "banner_title": "Welcome to world of",
     "banner_titlestrong": "webify",
     "banner_subtitle": "Millions of happy users work better with our integrated Apps.",
@@ -85,7 +88,7 @@
     "caption_event": "event",
     "news_readmore": "read more",
     "footer_waiting": "What are you waiting for?",
-    "numbers_talks":"Numbers Talks",
+    "numbers_talks": "Numbers Talks",
     "store_design": "Store Design",
     "portfolio_website_design": "Portfolio Website Design",
     "landing_page_design": "Landing Page Design for Individuals and Businesses",
@@ -103,7 +106,10 @@
     "annual_renew": "Annual Renewal {{price}}",
     "dont_heditate_contact_us": "Don't hesitate to contact us",
     "subscribe_now": "Subscribe Now",
-    "subscribe_text": "(Webify) Subscribe to {{value}}​"
-
+    "subscribe_text": "(Webify) Subscribe to {{value}}​",
+    "contact_us": "Contact Us",
+    "fast_links": "Fast Links",
+    "copyright": "Copyright © {{year}} Webify. All rights reserved.",
+    "Webify": "Webify"
   }
 }

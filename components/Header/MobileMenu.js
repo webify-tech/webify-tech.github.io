@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
-import Divider from '@material-ui/core/Divider';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { useTranslation } from 'next-i18next';
 import routeLink from '~/public/text/link';
 import useStyles from './header-style';
@@ -26,15 +26,16 @@ function MobileMenu(props) {
       <div className={clsx(classes.menu, open && classes.menuOpen)}>
         <List component="nav">
           {navMenu.map((item, index) => (
-            <ListItem
-              button
-              component="a"
-              href={`#${item}`}
-              key={index.toString()}
-              style={{ animationDuration: index * 0.15 + 's' }}
-            >
-              <ListItemText primary={t('saas-landing.header_' + item)} className={classes.menuList} />
-            </ListItem>
+            <AnchorLink className={classes.anchorlink} href={`#${item}`} offset={100}>
+              <ListItem
+                button
+                component="a"
+                key={index.toString()}
+                style={{ animationDuration: index * 0.15 + 's' }}
+              >
+                <ListItemText primary={t('saas-landing.header_' + item)} className={classes.menuList} />
+              </ListItem>
+            </AnchorLink>
           ))}
           <ListItem
             button
@@ -44,18 +45,6 @@ function MobileMenu(props) {
           >
             <ListItemText primary={t('saas-landing.header_contact')} className={classes.menuList} />
           </ListItem>
-          <Divider className={classes.dividerSidebar} />
-          {['login', 'register'].map((item, index) => (
-            <ListItem
-              button
-              component="a"
-              href={routeLink.saas[item]}
-              key={index.toString()}
-              style={{ animationDuration: navMenu.length * 0.15 + 's' }}
-            >
-              <ListItemText primary={t('saas-landing.header_' + item)} className={classes.menuList} />
-            </ListItem>
-          ))}
         </List>
       </div>
     </div>

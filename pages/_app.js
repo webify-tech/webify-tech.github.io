@@ -67,7 +67,7 @@ function MyApp(props) {
     const newPaletteType = theme.palette.type === 'light' ? 'dark' : 'light';
     localStorage.setItem('luxiTheme', theme.palette.type === 'light' ? 'dark' : 'light');
     setTheme({
-      ...appTheme('violeta', newPaletteType),
+      ...appTheme('oceanBlue', newPaletteType),
       direction: theme.direction,
     });
   };

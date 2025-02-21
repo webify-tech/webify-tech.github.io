@@ -10,6 +10,7 @@ import Container from '@material-ui/core/Container';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme } from '@material-ui/core/styles';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
+import { Typography } from '@material-ui/core';
 import Scrollspy from 'react-scrollspy';
 import { useTranslation } from 'next-i18next';
 import logo from '~/public/images/saas-logo.svg';
@@ -62,9 +63,9 @@ function Header(props) {
   const isDesktop = useMediaQuery(theme.breakpoints.up('lg'));
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const [menuList] = useState([
-    createData(navMenu[0], '#' + navMenu[0]),
-    createData(navMenu[1], '#' + navMenu[1]),
-    createData(navMenu[2], '#' + navMenu[2]),
+    createData(navMenu[0], '#' + navMenu[0], 65),
+    createData(navMenu[1], '#' + navMenu[1], 65),
+    createData(navMenu[2], '#' + navMenu[2], 65),
     createData(navMenu[3], '#' + navMenu[3], -40),
   ]);
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -112,6 +113,11 @@ function Header(props) {
                   </AnchorLink>
                 )}
               </div>
+              <AnchorLink href="#home" className={classes.anchorlink}>
+                <Typography variant="h6">
+                  {t('saas-landing.Webify')}
+                </Typography>
+              </AnchorLink>
               {isDesktop && (
                 <Scrollspy
                   items={navMenu}
@@ -140,11 +146,8 @@ function Header(props) {
             </nav>
             <nav className={classes.navMenu}>
               <Hidden xsDown>
-                <Button href={link.saas.login} className={classes.textBtn}>
-                  {t('saas-landing.header_login')}
-                </Button>
-                <Button href={link.saas.register} variant="contained" color="secondary" className={classes.button}>
-                  {t('saas-landing.header_register')}
+                <Button target="_blank" href="https://wa.me/+201285949513" variant="contained" color="secondary" className={classes.button}>
+                  {t('saas-landing.contact_us')}
                 </Button>
               </Hidden>
               <Settings toggleDark={onToggleDark} toggleDir={onToggleDir} invert={invert} />

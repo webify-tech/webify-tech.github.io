@@ -66,7 +66,7 @@ function PageNav() {
                   tooltip: classes.tooltip
                 }}
               >
-                <AnchorLink href={item.url} />
+                <AnchorLink href={item.url} offset={100} />
               </Tooltip>
             </li>
           )) }

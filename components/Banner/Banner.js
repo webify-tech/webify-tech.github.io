@@ -150,6 +150,7 @@ function Banner() {
                 id="logos"
                 variant="outlined"
                 color="secondary"
+                className={classes.bannerBtn}
                 size="large"
                 target="_blank"
                 href="https://wa.me/+201285949513"
@@ -157,7 +158,7 @@ function Banner() {
                 {t('saas-landing.banner_contact')}
               </Button>
               &nbsp;
-              <AnchorLink href="#logos">
+              <AnchorLink href="#about_us">
                 <Button
                   id="logos"
                   variant="contained"
