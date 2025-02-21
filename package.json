@@ -1,4 +1,5 @@
 {
+	"homepage": "https://github.com/webify-tech.github.io/eg",
 	"name": "saas-theme",
 	"version": "2.3.3",
 	"description": "Luxi ReactJs Saas Theme",
@@ -16,10 +17,12 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev -p ${PORT:=3008}",
-        "build": "next build",
-        "export": "next export",
-        "start": "next start -p ${PORT:=3008}",
-        "now-build": "next build && next export -o dist"
+		"build": "next build",
+		"export": "next export",
+		"start": "next start -p ${PORT:=3008}",
+		"now-build": "next build && next export -o dist",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d out"
 	},
 	"dependencies": {
 		"@babel/core": "^7.16.5",
@@ -36,7 +39,7 @@
 		"next": "^11.0.1",
 		"next-i18next": "10.0.1",
 		"next-images": "^1.1.2",
-        "next-language-detector": "1.0.0",
+		"next-language-detector": "1.0.0",
 		"next-page-transitions": "^1.0.0-beta.2",
 		"pre-commit": "^1.2.2",
 		"prop-types": "^15.7.2",
@@ -66,6 +69,7 @@
 		"eslint-plugin-prettier": "4.0.0",
 		"eslint-plugin-react": "7.27.1",
 		"eslint-webpack-plugin": "^3.1.1",
+		"gh-pages": "^6.3.0",
 		"postcss": "8.3.0",
 		"webpack": "^5.65.0"
 	}
