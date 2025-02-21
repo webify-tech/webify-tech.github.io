@@ -1,26 +1,30 @@
-const { i18n } = require('./next-i18next.config')
 const withImages = require('next-images');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const { i18n } = require('./next-i18next.config'); // Ensure i18n is properly imported
 
 module.exports = withImages({
-  // i18n,
+  i18n, // ✅ Uncomment to ensure i18n is loaded
   trailingSlash: true,
   images: {
     disableStaticImages: true
   },
   publicRuntimeConfig: {
-    localeSubpaths: typeof process.env.LOCALE_SUBPATHS === 'string'
-      ? process.env.LOCALE_SUBPATHS
-      : 'none',
+    localeSubpaths: process.env.LOCALE_SUBPATHS || 'none',
   },
-  webpack: (config, options) => {
-    cssModules: true,
+  webpack: (config) => {
+    // ✅ Ensure `cssModules` is part of `config.module.rules`
+    config.module.rules.push({
+      test: /\.css$/,
+      use: ['style-loader', 'css-loader'],
+    });
+
+    // ✅ Re-enable ESLint Plugin if needed
     config.plugins.push(
-      //      new ESLintPlugin({
-      //        exclude: ['node_modules']
-      //      })
+      new ESLintPlugin({
+        exclude: ['node_modules'],
+      })
     );
-    config.node = {}
+
     return config;
   },
 });
