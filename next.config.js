@@ -3,7 +3,7 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 const { i18n } = require('./next-i18next.config'); // Ensure i18n is properly imported
 
 module.exports = withImages({
-  i18n, // ✅ Uncomment to ensure i18n is loaded
+  i18n, // ✅ Uncomment to ensure i18n is loaded correctly
   trailingSlash: true,
   images: {
     disableStaticImages: true
