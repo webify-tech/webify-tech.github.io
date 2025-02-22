@@ -1,14 +1,17 @@
-const withImages = require('next-images');
-
-module.exports = withImages({
-  trailingSlash: true,
+/** @type {import('next').NextConfig} */
+const isProd = true;
+const nextConfig = {
+  reactStrictMode: true, // Enables React's strict mode
   images: {
-    disableStaticImages: true,
+    domains: ['example.com'], // Allow loading images from specific domains
   },
-  publicRuntimeConfig: {
-    localeSubpaths: typeof process.env.LOCALE_SUBPATHS === 'string'
-      ? process.env.LOCALE_SUBPATHS
-      : 'none',
-  },
-  webpack: (config) => config,
-});
+  assetPrefix: isProd ? '/eg/' : '',
+  basePath: isProd ? '/eg' : '',
+  output: 'export',
+  i18n: {
+    locales: ['en', 'ar'], // Example for localization
+    defaultLocale: 'ar',
+  }
+};
+
+module.exports = nextConfig;
