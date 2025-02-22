@@ -7,11 +7,7 @@ const nextConfig = {
   },
   assetPrefix: isProd ? '/eg/' : '',
   basePath: isProd ? '/eg' : '',
-  output: 'export',
-  i18n: {
-    locales: ['en', 'ar'], // Example for localization
-    defaultLocale: 'ar',
-  }
+  output: 'export'
 };
 
 module.exports = nextConfig;

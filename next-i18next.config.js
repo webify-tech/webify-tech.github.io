@@ -1,8 +1,12 @@
-module.exports = {
-  i18n: {
-    defaultLocale: 'ar',
-    locales: ['en', 'ar'],
-    fallbackLng: 'ar',
+const isProd = process.env.NODE_ENV === 'production';
+const nextConfig = {
+  reactStrictMode: true,
+  images: {
+    unoptimized: true, // Disable default image optimization
   },
-  reloadOnPrerender: process.env.NODE_ENV === 'development',
+  assetPrefix: isProd ? '/eg/' : '',
+  basePath: isProd ? '/eg' : '',
+  output: 'export'
 };
+
+export default nextConfig;
