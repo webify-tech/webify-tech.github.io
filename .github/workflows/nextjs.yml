@@ -58,7 +58,9 @@ jobs:
         run: npm ci --legacy-peer-deps # Changed from Yarn to npm
 
       - name: Build with Next.js
-        run: npx next build # Changed from Yarn to npm
+        run: |
+          npm run build
+          npm run export
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
