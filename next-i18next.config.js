@@ -1,12 +1,8 @@
-const isProd = process.env.NODE_ENV === 'production';
-const nextConfig = {
-  reactStrictMode: true,
-  images: {
-    unoptimized: true, // Disable default image optimization
+module.exports = {
+  i18n: {
+    defaultLocale: 'ar',
+    locales: ['en', 'ar'],
+    fallbackLng: 'ar',
   },
-  assetPrefix: isProd ? '/eg/' : '',
-  basePath: isProd ? '/eg' : '',
-  output: 'export'
+  ssg: true // Set to true for Static Site Generation (SSG)
 };
-
-export default nextConfig;

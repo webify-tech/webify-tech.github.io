@@ -2,11 +2,15 @@
 // const { i18n } = require('./next-i18next.config')
 const withImages = require('next-images');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const isProd = process.env.NODE_ENV === 'production';
 
+console.log(isProd, 'isProd');
 module.exports = withImages({
   // Enable this code below for Server Side Rendering/Translation (SSR)
   //  i18n,
-  output: 'export', // Please disable/comment for SSR Mode
+  // output: 'export', // Please disable/comment for SSR Mode
+  assetPrefix: isProd ? '/your-repository-name/' : '',
+  basePath: isProd ? '/your-repository-name' : '',
   trailingSlash: true,
   images: {
     disableStaticImages: true
