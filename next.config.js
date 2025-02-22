@@ -1,38 +1,12 @@
-// Enable this code below for Server Side Rendering/Translation (SSR)
-// const { i18n } = require('./next-i18next.config')
-const withImages = require('next-images');
-const ESLintPlugin = require('eslint-webpack-plugin');
-const isProd = process.env.NODE_ENV === 'production';
-
-console.log(isProd, 'isProd');
-module.exports = withImages({
-  // Enable this code below for Server Side Rendering/Translation (SSR)
-  //  i18n,
-  // output: 'export', // Please disable/comment for SSR Mode
-  assetPrefix: isProd ? '/eg/' : '',
-  basePath: isProd ? '/eg' : '',
-  trailingSlash: true,
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'export', // Required for GitHub Pages
+  trailingSlash: true, // Ensures proper routing on static hosting
   images: {
-    disableStaticImages: true
+    unoptimized: true, // Prevents server-side image optimization (needed for static export)
   },
-  eslint: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has ESLint errors.
-    ignoreDuringBuilds: true,
-  },
-  publicRuntimeConfig: {
-    localeSubpaths: typeof process.env.LOCALE_SUBPATHS === 'string'
-      ? process.env.LOCALE_SUBPATHS
-      : 'none',
-  },
-  webpack: (config, options) => {
-    cssModules: true,
-    config.plugins.push(
-      //      new ESLintPlugin({
-      //        exclude: ['node_modules']
-      //      })
-    );
-    config.node = {}
-    return config;
-  },
-});
+  basePath: '/eg', // Change to your GitHub repo name
+  assetPrefix: '/eg', // Ensures assets load correctly
+};
+
+module.exports = nextConfig;
