@@ -9,8 +9,8 @@ module.exports = withImages({
   // Enable this code below for Server Side Rendering/Translation (SSR)
   //  i18n,
   // output: 'export', // Please disable/comment for SSR Mode
-  assetPrefix: isProd ? '/your-repository-name/' : '',
-  basePath: isProd ? '/your-repository-name' : '',
+  assetPrefix: isProd ? '/eg/' : '',
+  basePath: isProd ? '/eg' : '',
   trailingSlash: true,
   images: {
     disableStaticImages: true
