@@ -4,5 +4,5 @@ module.exports = {
     locales: ['en', 'ar'],
     fallbackLng: 'ar',
   },
-  reloadOnPrerender: process.env.NODE_ENV === 'development',
+  ssg: true // Set to true for Static Site Generation (SSG)
 };
