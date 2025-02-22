@@ -1,26 +1,12 @@
-// const { i18n } = require('./next-i18next.config')
-const withImages = require('next-images');
-// const ESLintPlugin = require('eslint-webpack-plugin');
-
-module.exports = withImages({
-  // i18n,
-  trailingSlash: true,
+const isProd = process.env.NODE_ENV === 'production';
+const nextConfig = {
+  reactStrictMode: true,
   images: {
-    disableStaticImages: true
+    unoptimized: true, // Disable default image optimization
   },
-  publicRuntimeConfig: {
-    localeSubpaths: typeof process.env.LOCALE_SUBPATHS === 'string'
-      ? process.env.LOCALE_SUBPATHS
-      : 'none',
-  },
-  webpack: (config, options) => {
-    cssModules: true,
-    config.plugins.push(
-      //      new ESLintPlugin({
-      //        exclude: ['node_modules']
-      //      })
-    );
-    config.node = {}
-    return config;
-  },
-});
+  assetPrefix: isProd ? '/eg/' : '',
+  basePath: isProd ? '/eg' : '',
+  output: 'export'
+};
+
+export default nextConfig;
