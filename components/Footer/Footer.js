@@ -22,7 +22,7 @@ import PhoneAndroid from '@material-ui/icons/Phone';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import logo from '~/public/images/saas-logo.svg';
+import imgAPI from '~/public/images/imgAPI';
 import useStyles from './footer-style';
 import languageDetector from '../../lib/languageDetector';
 import i18nextConfig from '../../next-i18next.config';
@@ -120,7 +120,7 @@ function Footer(props) {
       <Grid container spacing={4}>
         <Grid item xs={12} md={3}>
           <div className={classes.logo}>
-            <img src={logo} alt="logo" />
+            <img src={imgAPI.logo} alt="logo" />
             <Typography variant="h6" color="textPrimary">
               {t('saas-landing.banner_titlestrong')}
             </Typography>

@@ -18,10 +18,10 @@ const useStyles = makeStyles(theme => ({
       '&:hover': {
         filter: 'none'
       }
-    },
+    }
   },
   title: {
-    marginBottom: theme.spacing(5),
+    margin: theme.spacing(5),
     color: theme.palette.primary.main,
     textAlign: 'center'
   }

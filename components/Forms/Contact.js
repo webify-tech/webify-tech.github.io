@@ -14,7 +14,7 @@ import Snackbar from '@material-ui/core/Snackbar';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 import { useTranslation } from 'next-i18next';
 import brand from '~/public/text/brand';
-import logo from '~/public/images/saas-logo.svg';
+import imgAPI from '~/public/images/imgAPI';
 import routeLink from '~/public/text/link';
 import { useText } from '~/theme/common';
 import Checkbox from './Checkbox';
@@ -74,7 +74,7 @@ function Contact() {
       <Hidden mdUp>
         <div className={clsx(classes.logo, classes.logoHeader)}>
           <a href={routeLink.saas.home}>
-            <img src={logo} alt="logo" />
+            <img src={imgAPI.logo} alt="logo" />
             <Typography component="span" className={text.title}>
               {brand.saas.projectName}
             </Typography>

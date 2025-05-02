@@ -220,7 +220,10 @@ const bannerStyles = makeStyles(theme => ({
         padding: theme.spacing(),
       },
       '& iframe': {
-        width: '100%'
+        width: '80%',
+        '.xtra-cookie .xtra-cookie-bl': {
+          display: 'none'
+        }
       }
     }
   },

@@ -9,7 +9,7 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import brand from '~/public/text/brand';
 import routerLink from '~/public/text/link';
-import logo from '~/public/images/saas-logo.svg';
+import imgAPI from '~/public/images/imgAPI';
 import { useText } from '~/theme/common';
 import useStyles from './form-style';
 
@@ -22,7 +22,7 @@ function AuthFrame(props) {
       <Hidden mdUp>
         <div className={clsx(classes.logo, classes.logoHeader)}>
           <a href={routerLink.saas.home}>
-            <img src={logo} alt="logo" />
+            <img src={imgAPI.logo} alt="logo" />
             <Typography component="p" className={text.subtitle2}>
               {brand.saas.projectName}
             </Typography>
@@ -53,7 +53,7 @@ function AuthFrame(props) {
                 <Hidden smDown>
                   <div className={classes.greeting}>
                     <div className={classes.logo}>
-                      <img src={logo} alt="logo" />
+                      <img src={imgAPI.logo} alt="logo" />
                       <Typography className={text.subtitle2}>
                         {brand.saas.projectName}
                       </Typography>
