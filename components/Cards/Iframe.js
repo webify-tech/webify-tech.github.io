@@ -27,7 +27,7 @@ function Iframe(props) {
           <CircularProgress />
         </div>
         )}
-        <iframe ref={frame} className={clsx(classes.iframe, loading && classes.hide)} src={link} title={title} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+        <iframe id="iframe" ref={frame} className={clsx(classes.iframe, loading && classes.hide)} src={link} title={title} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
       </div>
     );
 }

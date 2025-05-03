@@ -223,19 +223,19 @@ function PricingPlan() {
         <Grid container spacing={1} justify="center" className={classes.currency}>
           <Grid item>
             <Button variant={currentcy === 'eg' ? 'contained' : 'outlined'} onClick={() => setCurrentcy('eg')} color="primary">
-              <img width="20px" src={egypt} alt="eg" />
+              <img width="20px" src={egypt.src} alt="eg" />
               {t('saas-landing.egypt_pound')}
             </Button>
           </Grid>
           <Grid item>
             <Button variant={currentcy === 'sd' ? 'contained' : 'outlined'} onClick={() => setCurrentcy('sd')} color="primary">
-              <img width="20px" src={saudiArabia} alt="sd" />
+              <img width="20px" src={saudiArabia.src} alt="sd" />
               {t('saas-landing.saudia_rial')}
             </Button>
           </Grid>
           <Grid item>
             <Button variant={currentcy === 'us' ? 'contained' : 'outlined'} onClick={() => setCurrentcy('us')} color="primary">
-              <img width="20px" src={unitedState} alt="us" />
+              <img width="20px" src={unitedState.src} alt="us" />
               {t('saas-landing.us_dollar')}
             </Button>
           </Grid>

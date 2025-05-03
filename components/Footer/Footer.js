@@ -177,15 +177,25 @@ function Footer(props) {
                       </strong>
                     </ExpansionPanelSummary>
                     <ExpansionPanelDetails>
-                      <ul>
-                        {footer.description.map((item, index) => (
-                          <li key={item}>
-                            <Link href={footer.link[index]} variant="subtitle1" color="textSecondary">
-                              {item}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
+                    <ul>
+                      {footer.description.map((item, index) => (
+                        <li key={item}>
+                          {
+                            footer?.isLinks ? (
+                              <AnchorLink offset={100} href={footer.link[index]} variant="subtitle1" color="textSecondary">
+                                {item}
+                              </AnchorLink>
+                            )
+                              : (
+                                <Link target="_blank" href={footer.link[index]} variant="subtitle1" color="textSecondary">
+                                  {item}
+                                </Link>
+                            )
+                          }
+
+                        </li>
+                      ))}
+                    </ul>
                     </ExpansionPanelDetails>
                   </ExpansionPanel>
                 )}

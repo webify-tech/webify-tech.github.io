@@ -27,8 +27,8 @@ function FooterWithDeco(props) {
         <Typography variant="h4" className={text.title2}>
           {t('saas-landing.footer_waiting')}
         </Typography>
-        <Button variant="contained" color="secondary" size="large">
-          {t('saas-landing.getstarted')}
+        <Button link href='https://wa.me/+201285949513' variant="contained" color="secondary" size="large">
+          {t('saas-landing.create_mysite')}
         </Button>
       </div>
       <Footer toggleDir={toggleDir} />

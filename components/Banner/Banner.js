@@ -158,7 +158,7 @@ function Banner() {
                 {t('saas-landing.banner_contact')}
               </Button>
               &nbsp;
-              <AnchorLink href="#about_us">
+              <AnchorLink href="#about_us" offset={50}>
                 <Button
                   id="logos"
                   variant="contained"

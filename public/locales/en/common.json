@@ -110,6 +110,7 @@
     "contact_us": "Contact Us",
     "fast_links": "Fast Links",
     "copyright": "Copyright © {{year}} Webify. All rights reserved.",
-    "Webify": "Webify"
+    "Webify": "Webify",
+    "create_mysite": "Create My Site"
   }
 }

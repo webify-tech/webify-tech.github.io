@@ -10,7 +10,7 @@ const flagIcon = {
   position: 'relative',
   marginRight: 5,
   top: 1,
-  background: `url(${flag}) no-repeat transparent`,
+  background: `url(${flag.src}) no-repeat transparent`,
   backgroundSize: '16px auto',
   '&[class="ar"]': {
     backgroundPosition: '0 3px'
