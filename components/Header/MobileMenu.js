@@ -10,7 +10,7 @@ import { useTranslation } from 'next-i18next';
 import routeLink from '~/public/text/link';
 import useStyles from './header-style';
 import navMenu from './menu';
-
+const offset = [50, 100, 100, 100];
 function MobileMenu(props) {
   const classes = useStyles();
   const { toggleDrawer, open } = props;
@@ -26,7 +26,7 @@ function MobileMenu(props) {
       <div className={clsx(classes.menu, open && classes.menuOpen)}>
         <List component="nav">
           {navMenu.map((item, index) => (
-            <AnchorLink className={classes.anchorlink} href={`#${item}`} offset={100}>
+            <AnchorLink className={classes.anchorlink} href={`#${item}`} offset={offset[index] || 100}>
               <ListItem
                 button
                 component="a"

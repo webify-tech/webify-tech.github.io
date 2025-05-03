@@ -160,7 +160,7 @@ const footerStyles = makeStyles(theme => ({
       paddingTop: theme.spacing(20),
     },
     '&:before': {
-      background: `url(${theme.palette.type === 'dark' ? footerDecoDark : footerDecoLight}) top left no-repeat`,
+      background: `url(${theme.palette.type === 'dark' ? footerDecoDark.src : footerDecoLight.src}) top left no-repeat`,
       backgroundSize: '100% auto',
       top: -3,
       left: 0,

@@ -24,6 +24,7 @@ const titleStyles = makeStyles(theme => ({
     display: 'block',
     position: 'relative',
     marginBottom: theme.spacing(9),
+    color: theme.palette.text.secondary,
     '& h3': {
       fontSize: 36,
       lineHeight: '56px',
@@ -47,7 +48,7 @@ const titleStyles = makeStyles(theme => ({
       position: 'absolute'
     },
     '& strong': {
-      color: theme.palette.text.primary,
+      color: theme.palette.text.secondary,
     }
   },
   titleSecondary: {

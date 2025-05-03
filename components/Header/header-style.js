@@ -182,7 +182,7 @@ const headerStyles = makeStyles(theme => ({
   },
   active: {},
   button: {
-    width: theme.spacing(20)
+    width: theme.spacing(25)
   },
   navMenu: {
     [theme.breakpoints.up('lg')]: {

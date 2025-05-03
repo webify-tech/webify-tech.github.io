@@ -7,15 +7,14 @@ import { Button } from '@material-ui/core';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import projects from '~/public/data/projects.json';
 import arProjects from '~/public/data/projects-ar.json';
-import ImageThumbCard from '../Cards/ImageThumb';
+import ImageThumb from '../Cards/ImageThumb';
 import Title from '../Title';
 import useStyle from './gallery-style';
 
 function Gallery() {
   const classes = useStyle();
-  const { t } = useTranslation('common');
+  const { t, i18n: { language: locale } } = useTranslation('common');
   const [data, setData] = useState([arProjects]);
-  const { locale } = useTranslation();
   const [visibleItems, setVisibleItems] = useState(9);
   const [loading, setLoading] = useState(false);
   const handleViewMore = () => {
@@ -48,7 +47,7 @@ function Gallery() {
               key={index.toString()}
               style={{ transitionDuration: index / 4 + 's' }}
             >
-              <ImageThumbCard
+              <ImageThumb
                 img={item.img}
                 title={item.title}
                 link={item.link}

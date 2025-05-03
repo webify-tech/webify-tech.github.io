@@ -69,7 +69,11 @@ const featureStyles = makeStyles(theme => ({
   },
   list: {
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    color: theme.palette.text.secondary,
+    '& span': {
+      fontSize: 20
+    }
   },
   screen: {
     position: 'relative',

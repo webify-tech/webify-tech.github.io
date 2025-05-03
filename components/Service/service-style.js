@@ -86,6 +86,7 @@ const featureStyles = makeStyles(theme => ({
     }
   },
   tabContent: {
+    color: theme.palette.text.secondary,
     position: 'relative',
     [theme.breakpoints.up('md')]: {
       padding: theme.spacing(8, 4, 0),

@@ -20,7 +20,7 @@ const galleryStyles = makeStyles(theme => ({
       background: 'transparent',
       borderRadius: 40,
       marginRight: theme.spacing(),
-      border: '1px solid rgba(0, 0, 0, 0.87)',
+      border: '1px solid rgba(0, 0, 0, 0.54)',
       color: theme.palette.text.primary,
       whiteSpace: 'nowrap',
       minWidth: 100,
@@ -29,7 +29,7 @@ const galleryStyles = makeStyles(theme => ({
         marginRight: theme.spacing(3),
       },
       '&$selected': {
-        background: 'rgba(0, 0, 0, 0.87)',
+        background: 'rgba(0, 0, 0, 0.54)',
         color: theme.palette.common.white
       }
     }

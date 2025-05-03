@@ -71,6 +71,8 @@ function Footer(props) {
       isLinks: true,
       description: [t('saas-landing.header_about_us'), t('saas-landing.header_service'), t('saas-landing.header_our_work'), t('saas-landing.header_pricing')],
       link: ['#about_us', '#service', '#our_work', '#pricing'],
+      offset: [50, 100, 100, 100],
+
     },
     {
       title: t('saas-landing.contact_us'),
@@ -141,7 +143,7 @@ function Footer(props) {
                         <li key={item}>
                           {
                             footer?.isLinks ? (
-                              <AnchorLink offset={100} href={footer.link[index]} variant="subtitle1" color="textSecondary">
+                              <AnchorLink offset={footer.offset[index]} href={footer.link[index]} variant="subtitle1" color="textSecondary">
                                 {item}
                               </AnchorLink>
                             )
@@ -182,7 +184,7 @@ function Footer(props) {
                         <li key={item}>
                           {
                             footer?.isLinks ? (
-                              <AnchorLink offset={100} href={footer.link[index]} variant="subtitle1" color="textSecondary">
+                              <AnchorLink offset={footer.offset[index]} href={footer.link[index]} variant="subtitle1" color="textSecondary">
                                 {item}
                               </AnchorLink>
                             )
