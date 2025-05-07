@@ -15,14 +15,14 @@ import unitedState from '~/public/images/united-states-of-america.png';
 const feature = {
   main: {
     prices: {
-      us: '50 $',
-      eg: '2500 جنية',
-      sd: '190 ريال'
+      us: '70 $',
+      eg: '3500 جنية',
+      sd: '260 ريال'
     },
     renew: {
-      us: '25 $',
-      eg: '1250 جنية',
-      sd: '95 ريال'
+      us: '55 $',
+      eg: '2650 جنية',
+      sd: '200 ريال'
     },
     subscribText: {
       ar: '(ويبيفاي)  اشتراك في تصميم موقع الباقة الاساسية ',
@@ -34,20 +34,16 @@ const feature = {
         en: 'Special Link (Domain .COM)'
       },
       {
+        ar: 'استضافه مجانيه اول عام',
+        en: 'Free Hosting for One Year'
+      },
+      {
         ar: ' شهادة أمان HTTPs - SSL',
         en: 'HTTPs - SSL Certificate'
       },
       {
         ar: ' منتجات و طلبات لا محدودة',
         en: 'Unlimited Products and Orders'
-      },
-      {
-        ar: ' خيارات اللون والمقاس للمنتج',
-        en: 'Color and Size Options for Products'
-      },
-      {
-        ar: ' القسائم و كوبونات التخفيض',
-        en: 'Discount Coupons and Vouchers'
       },
       {
         ar: 'تصميم متجاوب مع الأجهزة المحمولة',
@@ -62,7 +58,7 @@ const feature = {
         en: 'Inventory and Sales Control'
       },
       {
-        ar: ' الموقع 4 صفحات',
+        ar: ' موقع مكون 4 صفحات',
         en: '4 Pages Website',
       },
       {
@@ -73,14 +69,14 @@ const feature = {
   },
   pro: {
     prices: {
-      us: '100 $',
-      eg: '5000 جنية',
-      sd: '380 ريال'
+      us: '150 $',
+      eg: '7500 جنية',
+      sd: '555 ريال'
     },
     renew: {
-      us: '50 $',
-      eg: '2500 جنية',
-      sd: '190 ريال'
+      us: '75 $',
+      eg: '3375 جنية',
+      sd: '250 ريال'
     },
     subscribText: {
       ar: '(ويبيفاي) اشتراك في تصميم موقع الباقة البرو ',
@@ -90,6 +86,10 @@ const feature = {
       {
         ar: ' رابط خاص (دومين .COM)',
         en: 'Special Link (Domain .COM)'
+      },
+      {
+        ar: 'استضافه مجانيه اول عام',
+        en: 'Free Hosting for One Year'
       },
       {
         ar: ' شهادة أمان HTTPs - SSL',
@@ -108,7 +108,7 @@ const feature = {
         en: 'Color and Size Options for Products'
       },
       {
-        ar: ' القسائم و كوبونات التخفيض',
+        ar: ' كوبونات التخفيض',
         en: 'Discount Coupons and Vouchers'
       },
       {
@@ -202,7 +202,7 @@ function PricingPlan() {
   const theme = useTheme();
   const { t, i18n: { language: locale } } = useTranslation('common');
   const isDesktop = useMediaQuery(theme.breakpoints.up('lg'));
-  const [currentcy, setCurrentcy] = React.useState('eg');
+  const [currentcy, setCurrentcy] = React.useState('us');
   return (
     <div className={classes.root}>
       <div className={classes.decoration}>
