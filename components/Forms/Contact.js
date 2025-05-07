@@ -5,20 +5,23 @@ import Hidden from '@material-ui/core/Hidden';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Paper from '@material-ui/core/Paper';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import Snackbar from '@material-ui/core/Snackbar';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 import { useTranslation } from 'next-i18next';
+import emailjs from "@emailjs/browser";
 import brand from '~/public/text/brand';
 import imgAPI from '~/public/images/imgAPI';
 import routeLink from '~/public/text/link';
 import { useText } from '~/theme/common';
-import Checkbox from './Checkbox';
 import useStyles from './form-style';
+import Alert from '../Alert';
+
+const YOUR_SERVICE_ID = 'service_vz13hv1'
+const YOUR_TEMPLATE_ID = 'template_7mm0o8h'
+const YOUR_PUBLIC_KEY = 'f-9SjXE9tHqkyvmJU'
 
 function Contact() {
   const classes = useStyles();
@@ -38,39 +41,65 @@ function Contact() {
     ValidatorForm.addValidationRule('isTruthy', value => value);
   });
 
-  const [openNotif, setNotif] = useState(false);
+  const [notif, setNotif] = useState({
+    open: false,
+    type: 'success',
+    message: ''
+  });
 
-  const [check, setCheck] = useState(false);
 
   const handleChange = name => event => {
     setValues({ ...values, [name]: event.target.value });
   };
 
-  const handleCheck = event => {
-    setCheck(event.target.checked);
+
+  const handleSubmit = async() => {
+    try{
+      setNotif({
+        open: true,
+        type: 'loading',
+        message: t('saas-landing.sending')
+      });
+      const templateParams = {
+        sender_name: values.name,
+        sender_email: values.email,
+        sender_phone: values.phone,
+        sender_company: values.company,
+        message: values.message
+      };
+      await emailjs
+        .send(YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, templateParams, {
+          publicKey: YOUR_PUBLIC_KEY,
+        })
+        setNotif({
+          open: true,
+          type: 'success',
+          message: t('saas-landing.message.sent')
+        });
+    }catch(err){
+      console.log('FAILED...', err);
+      setNotif({
+        open: true,
+        type: 'error',
+        message: t('saas-landing.message.error')
+      })
+    }
   };
 
-  const handleSubmit = () => {
-    setNotif(true);
-  };
 
   const handleClose = () => {
-    setNotif(false);
+    setNotif({
+      open: false,
+      type: 'success',
+      message: ''
+    });
   };
 
   return (
     <div className={classes.pageWrap}>
-      <Snackbar
-        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-        key="top right"
-        open={openNotif}
-        autoHideDuration={4000}
-        onClose={handleClose}
-        ContentProps={{
-          'aria-describedby': 'message-id',
-        }}
-        message={<span id="message-id">Message Sent</span>}
-      />
+
+      <Alert autoHideDuration={3000} severity={notif?.type} message={notif?.message} open={notif?.open} onClose={handleClose} anchorOrigin={{ vertical: 'top', horizontal: 'center' }} />
+            
       <Hidden mdUp>
         <div className={clsx(classes.logo, classes.logoHeader)}>
           <a href={routeLink.saas.home}>
@@ -126,19 +155,19 @@ function Contact() {
                       name="Name"
                       value={values.name}
                       validators={['required']}
-                      errorMessages={['This field is required']}
+                      errorMessages={[t('saas-landing.this.field.is.required')]}
                     />
                   </Grid>
                   <Grid item md={6} xs={12}>
                     <TextValidator
                       variant="filled"
-                      className={clsx(classes.input, classes.light)}
+                      className={clsx(classes.input, classes.light, classes.email)}
                       label={t('form_email')}
                       onChange={handleChange('email')}
                       name="Email"
                       value={values.email}
                       validators={['required', 'isEmail']}
-                      errorMessages={['This field is required', 'email is not valid']}
+                      errorMessages={[t('saas-landing.this.field.is.required'), t('saas-landing.email.is.not.valid')]}
                     />
                   </Grid>
                   <Grid item md={6} xs={12}>
@@ -175,28 +204,7 @@ function Contact() {
                   </Grid>
                 </Grid>
                 <div className={clsx(classes.btnArea, classes.flex)}>
-                  <FormControlLabel
-                    control={(
-                      <Checkbox
-                        validators={['isTruthy']}
-                        errorMessages="This field is required"
-                        checked={check}
-                        value={check}
-                        onChange={(e) => handleCheck(e)}
-                        color="secondary"
-                      />
-                    )}
-                    label={(
-                      <span>
-                        {t('form_terms')}
-                        <br />
-                        <a href="#">
-                          {t('form_privacy')}
-                        </a>
-                      </span>
-                    )}
-                  />
-                  <Button variant="contained" fullWidth={isMobile} type="submit" color="secondary" size="large">
+                  <Button disabled={notif.type === 'loading'} variant="contained" fullWidth={isMobile} type="submit" color="secondary" size="large">
                     {t('form_send')}
                   </Button>
                 </div>

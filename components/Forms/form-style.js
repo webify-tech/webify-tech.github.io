@@ -59,6 +59,11 @@ const contactStyles = makeStyles(theme => ({
   },
   light: {},
   input: {
+    '& textarea': {
+      color: theme.palette.common.white
+    },
+    position: 'relative',
+    marginBottom: theme.spacing(3),
     width: '100%',
     '& label': {
       left: theme.spacing(0.5),
@@ -118,9 +123,11 @@ const contactStyles = makeStyles(theme => ({
       alignItems: 'center',
     }
   },
-  flex: {},
+  flex: {
+    justifyContent: 'center'
+  },
   btnArea: {
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     [theme.breakpoints.up('sm')]: {
       marginTop: theme.spacing(5),
       display: 'flex',
@@ -151,11 +158,14 @@ const contactStyles = makeStyles(theme => ({
     },
     '&$flex': {
       display: 'flex',
-      justifyContent: 'space-between',
+      justifyContent: 'center',
       [theme.breakpoints.down('sm')]: {
         display: 'block'
       }
     },
+    'textarea': {
+      color: theme.palette.common.white
+    }
   },
   primary: {
     background: theme.palette.primary.main,
@@ -419,6 +429,15 @@ const contactStyles = makeStyles(theme => ({
     '&:after': {
       right: 0,
     }
+  },
+  loading: {
+    textAlign: 'center',
+    display: 'flex',
+    alignItems: 'center',
+    gap: 10
+  },
+  email: {
+    direction: 'rtl'
   }
 }));
 

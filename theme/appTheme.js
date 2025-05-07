@@ -158,6 +158,15 @@ const appTheme = (color, mode) => ({
         padding: '23px 12px 6px'
       }
     },
+    MuiSnackbarContent: {
+      root: {
+        'min-width': 'auto',
+        // Existing responsive styles
+        [`@media (min-width:900px)`]: {
+          minWidth: 'auto',
+        },
+      },
+    },
   },
 });
 

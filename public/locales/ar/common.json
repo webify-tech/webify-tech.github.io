@@ -111,6 +111,11 @@
     "fast_links": "روابط سريعة",
     "copyright": "حقوق النشر © {{year}} ويبيفاي. جميع الحقوق محفوظة.",
     "Webify": "ويبيفاي",
-    "create_mysite": "انشئ موقعك"
+    "create_mysite": "انشئ موقعك",
+    "sending": "جاري الارسال",
+    "message.sent": "تم الارسال بنجاح",
+    "message.error": "حدث خطأ في الارسال",
+    "this.field.is.required": "هذا الحقل مطلوب",
+    "email.is.not.valid" : "البريد الالكتروني غير صحيح"
   }
 }

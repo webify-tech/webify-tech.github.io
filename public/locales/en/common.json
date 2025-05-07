@@ -111,6 +111,12 @@
     "fast_links": "Fast Links",
     "copyright": "Copyright © {{year}} Webify. All rights reserved.",
     "Webify": "Webify",
-    "create_mysite": "Create My Site"
+    "create_mysite": "Create My Site",
+    "sending": "sending",
+    "message.sent": "message sent",
+    "this.field.is.required": "This field is required",
+    "email.is.not.valid" : "Email is not valid"
+
+
   }
 }
