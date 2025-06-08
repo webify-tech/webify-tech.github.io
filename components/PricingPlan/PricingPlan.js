@@ -15,9 +15,9 @@ import unitedState from '~/public/images/united-states-of-america.png';
 const feature = {
   main: {
     prices: {
-      us: '70 $',
-      eg: '3500 جنية',
-      sd: '260 ريال'
+      us: '200 $',
+      eg: '10000 جنية',
+      sd: '750 ريال'
     },
     renew: {
       us: '55 $',
@@ -69,9 +69,9 @@ const feature = {
   },
   pro: {
     prices: {
-      us: '150 $',
-      eg: '7500 جنية',
-      sd: '555 ريال'
+      us: '266 $',
+      eg: '13000 جنية',
+      sd: '1000 ريال'
     },
     renew: {
       us: '75 $',
