@@ -28,7 +28,7 @@ const HeadComponent = () => (
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta name="msapplication-TileImage" content="/favicons/ms-icon-144x144.png" />
     {/* PWA primary color */}
-    <meta name="theme-color" content={theme.violeta.palette.primary.main} />
+    <meta name="theme-color" content={theme.oceanBlue.palette.primary.main} />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link href="https://unpkg.com/ionicons@3.0.0/dist/css/ionicons.min.css" rel="stylesheet" />
